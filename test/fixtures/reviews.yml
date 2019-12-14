@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  satisfaction: MyString
+  revisit: MyString
+  suggest: MyString
+  living: MyString
+  stay_length: MyString
+  food_rating: MyString
+  events: MyString
+  comments: MyString
+  cost_level: MyString
+
+two:
+  satisfaction: MyString
+  revisit: MyString
+  suggest: MyString
+  living: MyString
+  stay_length: MyString
+  food_rating: MyString
+  events: MyString
+  comments: MyString
+  cost_level: MyString
