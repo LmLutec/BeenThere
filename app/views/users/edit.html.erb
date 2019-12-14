@@ -1,14 +1,9 @@
-<h1>New User Registration</h1>
 <%= form_for @user do |f| %>
     First name: <%= f.text_field :first_name %>
     Last name: <%= f.text_field :last_name %>
     Birthday: <%= f.date_select :age, start_year:1930, end_year: Time.now.year - 18 %>
     Email: <%= f.text_field :email %>
     Password: <%= f.text_field :password_digest %>
-    <%= f.submit "Create user account" %>
+    <%= f.submit "Edit user account" %>
 
 <% end %>
-</br>
-
-<h3>Returning Users</h3>
-<%= link_to 'Log In', login_path %>
