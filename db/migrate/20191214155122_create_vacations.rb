@@ -7,6 +7,8 @@ class CreateVacations < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :state
       t.string :country
+      t.integer :user_id
+      t.integer :transportation_id
 
       t.timestamps
     end

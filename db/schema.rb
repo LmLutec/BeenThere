@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2019_12_14_155122) do
     t.string "city"
     t.string "state"
     t.string "country"
+    t.integer "user_id"
+    t.integer "transportation_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
