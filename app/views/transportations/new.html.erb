@@ -1,5 +1,24 @@
 <%= form_for @transportation do |f| %>
-    
+   Select your transportation method </br>
+    <%= f.radio_button :method, 'Car' %>Car </br>
+    <%= f.radio_button :method, 'Plane' %>Plane </br>
+    <%= f.radio_button :method, 'Bus' %>Bus </br>
+    <%= f.radio_button :method, 'Train' %>Train </br>
+    <%= f.radio_button :method, 'Other' %>Other </br>
+    Travel time to location(closest approximation in hours): <%= f.text_field :time_to %> </br>
+    Travel time from location(closest approximation in hours): <%= f.text_field :time_from %> </br>
+    Overall travel costs(roundtrip): (*estimation should include costs such as gas, exclude food)
+        <%= f.text_field :cost_level %> </br>
+    Left From: 
+        City: <%= f.text_field :from_city %>
+        State: <%= f.text_field :from_state %>
+        Country: <%= f.text_field :from_country %> </br>
+    Vacationed to: 
+        City: <%= f.text_field :to_city %>
+        State: <%= f.text_field :to_state %>
+        Country: <%= f.text_field :to_country %> </br>
+        <%= f.submit "Submit" %>
+<% end %>
 
 
 
@@ -8,17 +27,3 @@
 
 
 
-
-
-
-
-t.string :method
-t.string :time_to
-t.string :time_from
-t.string :cost_level
-t.string :from_city
-t.string :from_state
-t.string :from_country
-t.string :to_city
-t.string :to_state
-t.string :to_country

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :vacations
-  resources :reviews
+  resources :vacations do 
+    resources :reviews, only: [:new, :index, :show]
+  end 
+
   resources :transportations
   resources :users
 
