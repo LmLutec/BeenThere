@@ -1,7 +1,7 @@
 <h1>Log In</h1>
 <%= form_for @user, url: login_path do |f| %>
     Email: <%= f.text_field :email %>
-    Password: <%= f.text_field :password_digest %>
+    Password: <%= f.text_field :password %>
     <%= f.submit "Log In" %>
 <% end %>
 </br>
