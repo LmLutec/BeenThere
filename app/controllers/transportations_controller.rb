@@ -5,7 +5,7 @@ class TransportationsController < ApplicationController
     end 
 
     def create 
-        @transportation = Transportation(transportation_params)
+        @transportation = Transportation.create(transportation_params)
         redirect_to transportation_path(@transportation)
     end 
 
@@ -13,6 +13,9 @@ class TransportationsController < ApplicationController
         @transportation = Transportation.find_by(id: params[:id])
     end 
 
+    def edit
+        @transportation = Transportation.find_by(id: params[:id])
+    end 
 
 
 
