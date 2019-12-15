@@ -1,0 +1,15 @@
+<%= form_for @vacation do |f| %>
+    Select Vacation type: </br>
+    <%= f.radio_button :occasion, 'Family' %>Family </br>
+    <%= f.radio_button :occasion, 'Couples' %>Couples </br>
+    <%= f.radio_button :occasion, 'Solo getaway' %>Solo getaway </br>
+    <%= f.radio_button :occasion, 'Business' %>Business </br>
+    Vacation city: <%= f.text_field :city %> </br>
+    Vacation state: <%= f.text_field :state %> </br>
+    Vacation country: <%= f.text_field :country %> </br>
+    Vacation start date: <%= f.date_select :start_date %> </br>
+    Vacation end date: <%= f.date_select :end_date %> </br>
+    <%= f.submit "Submit vacation" %>
+<% end %>
+
+
