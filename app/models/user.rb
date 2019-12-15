@@ -5,5 +5,7 @@ class User < ApplicationRecord
     has_many :reviews, through: :vacations
     has_many :transportations, through: :vacations
 
+    validates :first_name, :last_name, :age, :email, :password, presence: true 
+    validates :email, uniqueness: true 
     
 end
