@@ -6,7 +6,6 @@ class VacationsController < ApplicationController
 
     def create
         @vacation = Vacation.create(vacation_params)
-        byebug
         redirect_to vacation_path(@vacation)
     end 
 

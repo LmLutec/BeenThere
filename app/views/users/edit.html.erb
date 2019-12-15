@@ -3,7 +3,7 @@
     Last name: <%= f.text_field :last_name %>
     Birthday: <%= f.date_select :age, start_year:1930, end_year: Time.now.year - 18 %>
     Email: <%= f.text_field :email %>
-    Password: <%= f.text_field :password_digest %>
+    Password: <%= f.text_field :password %>
     <%= f.submit "Edit user account" %>
 
 <% end %>

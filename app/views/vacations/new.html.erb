@@ -9,6 +9,11 @@
     Vacation country: <%= f.text_field :country %> </br>
     Vacation start date: <%= f.date_select :start_date %> </br>
     Vacation end date: <%= f.date_select :end_date %> </br>
+
+    <%= f.fields_for :reviews do |review| %>
+    <%= ff.hidden_field :review_id, @vacation.id %>
+        <%= f.select :review, options_for_satisfaction %>
+    <% end %>
     <%= f.submit "Submit vacation" %>
 <% end %>
 
