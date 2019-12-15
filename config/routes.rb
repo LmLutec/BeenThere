@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :transportations
   resources :users
+  
 
   root :to => 'users#new'
 
