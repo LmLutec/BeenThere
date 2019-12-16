@@ -1,13 +1,16 @@
 <h1>New User Registration</h1>
+
 <%= form_for @user do |f| %>
     First name: <%= f.text_field :first_name %>
     Last name: <%= f.text_field :last_name %>
     Age: <%= f.text_field :age %>
     Email: <%= f.text_field :email %>
     Password: <%= f.password_field :password %>
-    <%= f.submit "Create user account" %>
-
+<%= f.submit "Create user account" %>
 <% end %>
+
+
+
 </br>
 
 <h3>Returning Users</h3>

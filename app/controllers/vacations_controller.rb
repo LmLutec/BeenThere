@@ -1,12 +1,16 @@
 class VacationsController < ApplicationController
+    before_action :require_login
 
     def new
         @vacation = Vacation.new
     end 
 
     def create
-        @vacation = Vacation.create(vacation_params)
-        redirect_to vacation_path(@vacation)
+        @user = User.find_by(id: session[:user_id])
+        @vacation = @user.vacations.build 
+        byebug
+        @review = @vacation.review.create 
+        @vacation.save
     end 
 
     def show
@@ -18,8 +22,15 @@ class VacationsController < ApplicationController
     private
 
     def vacation_params
-        params.require(:vacation).permit(:occasion, :start_date, :end_date, :city, :state, :country, :user_id, :transportation_id, :review_id)
+        params.require(:vacation).permit(:occasion, :start_date, :end_date, :city, :state, :country)
     end 
-end
+
+    def require_login
+        unless session[:user_id]
+            redirect_to root_path 
+        end 
+
+    end
+end 
 
 

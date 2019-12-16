@@ -1,4 +1,5 @@
 <%= form_for @transportation do |f| %>
+    <%= hidden_field(:user_id, :transportation_id) %>
    Select your transportation method </br>
     <%= f.radio_button :method, 'Car' %>Car </br>
     <%= f.radio_button :method, 'Plane' %>Plane </br>
@@ -21,7 +22,7 @@
 <% end %>
 
 
-
+<%= link_to 'Home', user_path(user) %>
 
 
 

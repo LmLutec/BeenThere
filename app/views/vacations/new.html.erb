@@ -1,3 +1,4 @@
+<h4>Tell us about your Vacation!</h4>
 <%= form_for @vacation do |f| %>
     Select Vacation type: </br>
     <%= f.radio_button :occasion, 'Family' %>Family </br>
@@ -7,13 +8,10 @@
     Vacation city: <%= f.text_field :city %> </br>
     Vacation state: <%= f.text_field :state %> </br>
     Vacation country: <%= f.text_field :country %> </br>
-    Vacation start date: <%= f.date_select :start_date %> </br>
-    Vacation end date: <%= f.date_select :end_date %> </br>
-
-    <%= f.fields_for :reviews do |review| %>
-    <%= ff.hidden_field :review_id, @vacation.id %>
-        <%= f.select :review, options_for_satisfaction %>
-    <% end %>
+    Vacation start date: <%= f.text_field :start_date %> </br>
+    Vacation end date: <%= f.text_field :end_date %> </br>
+    
+  </br>
     <%= f.submit "Submit vacation" %>
 <% end %>
 
