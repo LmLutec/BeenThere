@@ -11,6 +11,7 @@
     
     <h4>Vacation Review</h4>
     <%= f.fields_for :reviews do |review| %>
+        <%= review.hidden_field :user_id, :value => @user.id%>
         1. How satisfied were you with your trip?</br>
         <%= review.check_box :satisfaction %> The happiest I have ever been on vacation(atleast that I can remember!)</br> 
         <%= review.check_box :satisfaction %> I enjoyed myself </br>
