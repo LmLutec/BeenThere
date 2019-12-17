@@ -7,17 +7,15 @@ class VacationsController < ApplicationController
 
     def new
         @vacation = Vacation.new
+        @vacation.reviews.build 
+        @vacation.users.build 
         
     end 
 
     def create
         @user = User.find_by(id: session[:user_id])
-        @review = Review.new 
-        @vacation = @user.vacations.build(vacation_params)
-        @vacation.reviews.build 
-        @vacation.save
-        byebug
-        redirect_to vacation_path(@vacation)
+        @vacation = Vacation.create(vacation_params)
+        redirect_to vacations_path 
     end 
 
     def show
@@ -30,7 +28,7 @@ class VacationsController < ApplicationController
     private
 
     def vacation_params
-        params.require(:vacation).permit(:occasion, :city, :state, :country, :user_id, review: [:satisfaction, :revisit, :suggest, :living, :food_rating, :events, :comments, :cost_level])
+        params.require(:vacation).permit(:occasion, :city, :state, :country, :user_id, reviews_attributes: [:satisfaction, :revisit, :suggest, :living, :food_rating, :events, :comments, :cost_level])
     end 
 
     def require_login

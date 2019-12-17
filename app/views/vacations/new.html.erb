@@ -10,36 +10,36 @@
     Vacation country: <%= f.text_field :country %> </br>
     
     <h4>Vacation Review</h4>
-    <%= f.fields_for :review do |review_fields| %>
+    <%= f.fields_for :reviews do |review| %>
         1. How satisfied were you with your trip?</br>
-        <%= review_fields.check_box :satisfaction %> The happiest I have ever been on vacation(atleast that I can remember!)</br> 
-        <%= review_fields.check_box :satisfaction %> I enjoyed myself </br>
-        <%= review_fields.check_box :satisfaction %> I know some things that could have used improvement </br>
-        <%= review_fields.check_box :satisfaction %> Hey, it was a 'vacation' </br>
-        <%= review_fields.check_box :satisfaction %> eh, nothing to mention </br>
+        <%= review.check_box :satisfaction %> The happiest I have ever been on vacation(atleast that I can remember!)</br> 
+        <%= review.check_box :satisfaction %> I enjoyed myself </br>
+        <%= review.check_box :satisfaction %> I know some things that could have used improvement </br>
+        <%= review.check_box :satisfaction %> Hey, it was a 'vacation' </br>
+        <%= review.check_box :satisfaction %> eh, nothing to mention </br>
         2. Would you revisit?</br>
-        <%= review_fields.check_box :revisit %> Absolutely </br>
-        <%= review_fields.check_box :revisit %> Maybe </br>
-        <%= review_fields.check_box :revisit %> Probably not </br>
+        <%= review.check_box :revisit %> Absolutely </br>
+        <%= review.check_box :revisit %> Maybe </br>
+        <%= review.check_box :revisit %> Probably not </br>
         3. Would you suggest this location to friends and family?</br>
-        <%= review_fields.check_box :suggest %> Yes </br>
-        <%= review_fields.check_box :suggest %> No </br>
+        <%= review.check_box :suggest %> Yes </br>
+        <%= review.check_box :suggest %> No </br>
         4. What were your sleeping arrangements? </br>
-        <%= review_fields.check_box :living %> Stayed with family </br>
-        <%= review_fields.check_box :living %> Stayed with friends </br>
-        <%= review_fields.check_box :living %> Stayed in a hotel </br>
-        <%= review_fields.check_box :living %> Stayed in an Air bnb </br>
+        <%= review.check_box :living %> Stayed with family </br>
+        <%= review.check_box :living %> Stayed with friends </br>
+        <%= review.check_box :living %> Stayed in a hotel </br>
+        <%= review.check_box :living %> Stayed in an Air bnb </br>
         5. Rate the food. Overall, on a scale of 1 to 10(10 being the best) it was a: </br>
-        <%= review_fields.text_field :food_rating %> </br>
+        <%= review.text_field :food_rating %> </br>
         6. Was the area full of things to do? </br>
-        <%= review_fields.check_box :events %> There were events and attractions everywhere! </br>
-        <%= review_fields.check_box :events %> You could bump into an event or two without searching </br>
-        <%= review_fields.check_box :events %> There are some good events, but you have to search for some or ask around </br>
-        <%= review_fields.check_box :events %> There was not much to do, a restaurant here, a bar there </br>
+        <%= review.check_box :events %> There were events and attractions everywhere! </br>
+        <%= review.check_box :events %> You could bump into an event or two without searching </br>
+        <%= review.check_box :events %> There are some good events, but you have to search for some or ask around </br>
+        <%= review.check_box :events %> There was not much to do, a restaurant here, a bar there </br>
         7. Additional comments: </br>
-        <%= review_fields.text_area :comments %> </br>
+        <%= review.text_area :comments %> </br>
         8. Cost level (estimation excluding travel and food): </br>
-        <%= review_fields.text_field :cost_level %> </br>
+        <%= review.text_field :cost_level %> </br>
     <% end %>
   </br>
     <%= f.submit "Submit vacation" %>
