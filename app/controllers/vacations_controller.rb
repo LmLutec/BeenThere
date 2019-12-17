@@ -14,7 +14,7 @@ class VacationsController < ApplicationController
 
     def create
         @vacation = Vacation.create(vacation_params)
-        byebug
+        flash[:notice] = "Vacation created"
         redirect_to vacation_path(@vacation) 
     end 
 
