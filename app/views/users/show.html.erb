@@ -1,11 +1,13 @@
 <%= @user.first_name %>
 </br>
-<%= link_to 'Edit profile', edit_user_path(@user) %>
 </br>
-<%= link_to 'Logout', logout_path, method: 'post' %></br>
-
-
 <%= link_to 'Add vacation', new_vacation_path %>
 </br></br>
 
-<%= link_to 'Delete Profile', user_path(@user), method: 'delete' %>
+<%= link_to 'Edit profile', edit_user_path(@user) %>
+</br>
+
+<%= link_to 'Logout', logout_path, method: 'post' %></br>
+
+</br>
+<%= link_to 'Delete Profile', user_path(@user), method: "delete" %>

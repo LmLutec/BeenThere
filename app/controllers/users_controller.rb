@@ -17,6 +17,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else 
+            flash[:notice] = "Complete all fields"
             redirect_to '/'
         end 
     end 
@@ -37,9 +38,9 @@ class UsersController < ApplicationController
     end 
 
     def destroy
-        @user = User.find_by(id: session[:user_id])
+        @user = User.find(session[:user_id])
         @user.delete
-        redirect_to root_path
+        redirect_to '/'
     end 
 
 
