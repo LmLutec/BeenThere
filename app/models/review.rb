@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-    belongs_to :vacation
-
+    belongs_to :user 
+    belongs_to :vacation 
 end

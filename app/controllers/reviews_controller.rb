@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
+        
     end
 
     def require_login
@@ -22,3 +23,6 @@ class ReviewsController < ApplicationController
         unless session[:user_id] && @vacation 
     end 
 end
+
+
+

@@ -13,6 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_12_14_155122) do
 
   create_table "reviews", force: :cascade do |t|
+    t.string "start_date"
+    t.string "end_date"
     t.string "satisfaction"
     t.string "revisit"
     t.string "suggest"
@@ -22,22 +24,8 @@ ActiveRecord::Schema.define(version: 2019_12_14_155122) do
     t.string "events"
     t.string "comments"
     t.string "cost_level"
+    t.integer "user_id"
     t.integer "vacation_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "transportations", force: :cascade do |t|
-    t.string "method"
-    t.string "time_to"
-    t.string "time_from"
-    t.string "cost_level"
-    t.string "from_city"
-    t.string "from_state"
-    t.string "from_country"
-    t.string "to_city"
-    t.string "to_state"
-    t.string "to_country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -54,14 +42,9 @@ ActiveRecord::Schema.define(version: 2019_12_14_155122) do
 
   create_table "vacations", force: :cascade do |t|
     t.string "occasion"
-    t.string "start_date"
-    t.string "end_date"
     t.string "city"
     t.string "state"
     t.string "country"
-    t.integer "user_id"
-    t.integer "transportation_id"
-    t.integer "review_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
