@@ -1,0 +1,12 @@
+<h4>Tell us about your Location!</h4>
+<%= form_for @location do |f| %>
+    Where did you vacation? </br>
+  
+    Location country: <%= f.text_field :country %> </br>
+    Location city: <%= f.text_field :city %> </br>
+    Location state: <%= f.text_field :state %> </br>
+
+  <%= f.submit "Go to review" %>
+  <% end %>
+<%= link_to 'Return home', user_path(@user) %>
+

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  resources :vacations do 
+  
+  root :to => 'users#new'
+  
+  resources :locations do 
     resources :reviews, only: [:new, :create, :index, :show]
   end 
 
-  resources :transportations
-  resources :users
-  
 
-  root :to => 'users#new'
+  resources :users
 
   resources :sessions, only: [:new, :create]
 

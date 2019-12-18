@@ -1,8 +1,7 @@
 class CreateReviews < ActiveRecord::Migration[6.0]
   def change
     create_table :reviews do |t|
-      t.string :start_date
-      t.string :end_date 
+      t.string :occasion
       t.string :satisfaction
       t.string :revisit
       t.string :suggest

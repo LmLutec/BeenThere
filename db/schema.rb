@@ -12,9 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2019_12_14_155122) do
 
+  create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
-    t.string "start_date"
-    t.string "end_date"
+    t.string "occasion"
     t.string "satisfaction"
     t.string "revisit"
     t.string "suggest"
@@ -36,15 +43,6 @@ ActiveRecord::Schema.define(version: 2019_12_14_155122) do
     t.integer "age"
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "vacations", force: :cascade do |t|
-    t.string "occasion"
-    t.string "city"
-    t.string "state"
-    t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
