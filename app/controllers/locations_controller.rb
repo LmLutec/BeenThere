@@ -19,6 +19,7 @@ class LocationsController < ApplicationController
 
     def show
         @location = Location.find_by(id: params[:id])
+        redirect_to new_location_review_path(@location) 
     end 
 
 

@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-        @review = Vacation.find_by(id: params[:id]).review
+        @review = Location.find_by(id: params[:id]).review
     end
 
 
@@ -19,10 +19,8 @@ class ReviewsController < ApplicationController
     end
 
     def require_login
-        @vacation = Vacation.find_by(id: params[:id])
-        unless session[:user_id] && @vacation 
+        @location = Location.find_by(id: params[:id])
+        unless session[:user_id] && @location 
     end 
+
 end
-
-
-
