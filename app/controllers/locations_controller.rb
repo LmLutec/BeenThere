@@ -8,18 +8,16 @@ class LocationsController < ApplicationController
     def new
         @location = Location.new  
         @user = User.find_by(id: session[:user_id])
-        @user.reviews.build 
     end 
 
     def create
         @location = Location.create(location_params)
         flash[:notice] = "Location created"
-        redirect_to location_path(@location) 
+        redirect_to new_location_review_path(@location)
     end 
 
     def show
         @location = Location.find_by(id: params[:id])
-        redirect_to new_location_review_path(@location) 
     end 
 
 

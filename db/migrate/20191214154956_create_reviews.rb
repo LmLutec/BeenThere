@@ -12,7 +12,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :comments
       t.string :cost_level
       t.integer :user_id
-      t.integer :vacation_id
+      t.integer :location_id
 
       t.timestamps
     end
