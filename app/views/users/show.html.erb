@@ -1,13 +1,17 @@
-<%= @user.first_name %>
+<% if @user.id == session[:user_id] %>
+    <h3>Welcome back, <%= @user.first_name %></h3>
+    <%= link_to 'Add vacation', new_location_path %></br>
+    <%= link_to 'Edit profile', edit_user_path(@user) %>
 </br>
+
+    <%= link_to 'Logout', logout_path, method: 'post' %></br>
+
 </br>
-<%= link_to 'Add vacation', new_location_path %>
+    <%= link_to 'Delete Profile', user_path(@user), method: "delete" %>
+<% else %>
+    <% @user.reviews.each do |review| %>
+        <%= review.occasion %>
+        <% end %>
+<% end %>
 </br></br>
 
-<%= link_to 'Edit profile', edit_user_path(@user) %>
-</br>
-
-<%= link_to 'Logout', logout_path, method: 'post' %></br>
-
-</br>
-<%= link_to 'Delete Profile', user_path(@user), method: "delete" %>
