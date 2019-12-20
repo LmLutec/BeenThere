@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end 
 
 
-  post '/locations/:id/reviews/new' => 'reviews#create'
+  post '/locations/:id/reviews/new' => 'reviews#show'
 
 
   resources :users
