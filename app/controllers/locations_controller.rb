@@ -20,7 +20,16 @@ class LocationsController < ApplicationController
         @location = Location.find_by(id: params[:id])
     end 
 
+    def edit 
+        @location = Location.find_by(id:params[:id])
+        @user = User.find_by(id: session[:user_id])
+    end 
 
+    def update
+        @location = Location.find_by(id: params[:id])
+        @location.update(location_params) 
+        redirect_to location_path(@location)
+    end 
 
 
     private

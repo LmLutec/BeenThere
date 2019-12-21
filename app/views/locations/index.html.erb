@@ -1,6 +1,6 @@
-<h2>Browse reviews by location!</h2>
+<h2>Browse review stats by location!</h2>
 <% @locations.each do |location| %>
-    <%= by_location(location) %></br>
+    <%=link_to by_location(location), location_path(location) %></br>
     <% end %>
 
 
