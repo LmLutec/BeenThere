@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         
         if @user.id 
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to '/home'
         else 
             flash[:notice] = "Complete all fields"
             redirect_to '/'

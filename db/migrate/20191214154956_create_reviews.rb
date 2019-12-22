@@ -13,6 +13,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :cost_level
       t.integer :user_id
       t.integer :location_id
+      t.integer :review_id 
 
       t.timestamps
     end

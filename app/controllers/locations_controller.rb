@@ -12,8 +12,13 @@ class LocationsController < ApplicationController
 
     def create
         @location = Location.create(location_params)
-        flash[:notice] = "Location created"
-        redirect_to new_location_review_path(@location)
+        if @location.save
+            flash[:notice] = "Location created"
+            redirect_to new_location_review_path(@location)
+        else 
+            flash[:notice] = "Fill out all fields"
+            redirect_to new_location_path 
+        end 
     end 
 
     def show

@@ -9,13 +9,18 @@ class SessionsController < ApplicationController
         if @user 
             if @user.authenticate(params[:user][:password])
                 session[:user_id] = @user.id 
-                redirect_to user_path(@user)
+                render "home"
             else
                 redirect_to root_path
             end 
         else
             redirect_to root_path
         end 
+    end 
+
+    def home
+        @user = User.find_by(id: session[:user_id])
+        render "home"
     end 
 
     def destroy

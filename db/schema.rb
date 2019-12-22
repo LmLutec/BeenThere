@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_155122) do
     t.string "cost_level"
     t.integer "user_id"
     t.integer "location_id"
+    t.integer "review_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
