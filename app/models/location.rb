@@ -6,4 +6,8 @@ class Location < ApplicationRecord
 
     accepts_nested_attributes_for :reviews
 
+    def reviews_attributes=(reviews_attributes)
+            self.reviews.build(reviews_attributes) 
+    end 
+
 end

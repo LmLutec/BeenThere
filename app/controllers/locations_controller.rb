@@ -13,8 +13,7 @@ class LocationsController < ApplicationController
     def create
         @location = Location.create(location_params)
         if @location.save
-            flash[:notice] = "Location created"
-            redirect_to new_location_review_path(@location)
+            redirect_to location_path(@location)
         else 
             flash[:notice] = "Fill out all fields"
             redirect_to new_location_path 
@@ -40,7 +39,7 @@ class LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:city, :state, :country, :user_id, reviews_attributes: [:user_id, :occasion, :satisfaction, :revisit, :suggest, :living, :food_rating, :events, :comments, :cost_level])
+        params.require(:location).permit(:city, :state, :country, :user_id, :reviews_attributes => [:location_id, :user_id, :occasion, :satisfaction, :revisit, :suggest, :living, :stay_length, :food_rating, :events, :comments, :cost_level])
     end 
 
     def require_login

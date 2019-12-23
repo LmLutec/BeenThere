@@ -2,11 +2,15 @@
     <%= form_for :review do |review| %>
         <%= review.hidden_field :location_id, :value => @location.id %>
         <%= review.hidden_field :user_id, :value => @user.id %>
+    
         What was the occasion for your trip? </br>
         <%= review.radio_button :occasion, 'Family' %>Family </br>
         <%= review.radio_button :occasion, 'Couples' %>Couples </br>
         <%= review.radio_button :occasion, 'Solo getaway' %>Solo getaway </br>
         <%= review.radio_button :occasion, 'Business' %>Business </br>
+
+      
+
         1. How satisfied were you with your trip?</br>
         <%= review.check_box :satisfaction %> The happiest I have ever been on Location(atleast that I can remember!)</br> 
         <%= review.check_box :satisfaction %> I enjoyed myself </br>
