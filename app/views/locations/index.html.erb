@@ -1,6 +1,8 @@
 <h2>Browse review stats by location!</h2>
-<% @locations.each do |location| %>
-    <%=link_to by_location(location), location_path(location) %></br>
+    <% @locations_array.collect do |location| %>
+        <%= by_location(location) %></br>
     <% end %>
 
+
+    <p>Highest rate location will appear on this page</p>
 

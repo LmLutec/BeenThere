@@ -1,24 +1,36 @@
 class LocationsController < ApplicationController
+    include LocationsHelper
+
     before_action :require_login
+
 
     def index
         @locations = Location.all 
+       
     end 
 
     def new
         @location = Location.new  
         @user = User.find_by(id: session[:user_id])
+        @location.reviews.build(params[:reviews_attributes]) 
     end 
 
     def create
+        @new_location = "#{params[:location][:country]}, #{params[:location][:state]}, #{params[:location][:city]}"        
+       
         @location = Location.create(location_params)
-        if @location.save
+        
+        location_match(@new_location)
+       
+       byebug
+        if @location.save 
             redirect_to location_path(@location)
         else 
             flash[:notice] = "Fill out all fields"
             redirect_to new_location_path 
         end 
     end 
+
 
     def show
         @location = Location.find_by(id: params[:id])
@@ -34,6 +46,7 @@ class LocationsController < ApplicationController
         @location.update(location_params) 
         redirect_to location_path(@location)
     end 
+
 
 
     private
