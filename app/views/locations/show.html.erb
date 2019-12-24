@@ -1,27 +1,25 @@
 <%= by_location(@location) %> </br>
-<p>Show location information with location stats</p>
-    By occasion: <% @location.reviews.group_by.each do |occasion|%></br>
-                    <%= "#{occasion.occasion}" %>
-                    <%= "#{occasion.satisfaction}" %>
+
+    <% @location.reviews.map.with_index do |review,index|%></br>
+          <%= "#{index + 1}:" %></br> <%= "Occasion: #{review.occasion}" %></li></br>
+                    <%= "Satisfaction: #{review.satisfaction}" %></br>
+                    <%= "Comments: #{review.comments}" %></br>  
+                    <%= "Revisit: #{review.revisit}" %></br>
+                    <%= "Stay Length: #{review.stay_length}" %></br>
+                    <%= "Living: #{review.living}" %></br>
+                    <%= "Food rating: #{review.food_rating}" %></br>
+                    <%= "Events: #{review.events}" %></br>
+                    <%= "Cost level: #{review.cost_level}" %></br>
+                    
                     <% end %></br></br>
 
 
 <p>Heading for occasion and other attributes</p>
 
-
-    <% @location.reviews.each do |review| %> 
-        <%= review.occasion %>:  <%=review.comments%></br>
-        <% end %>
     
         <p>review count: <%= @location.reviews.count%></p>
 
 
-        <% @location.reviews.each do |review| %>
-           <% r = Review.find_by(occasion: review.occasion) %></br>
-           <%= r.occasion %>
-            <% end %>
+    
     <p>comment count</p>
     <p>comments</p>
-
-
-    
