@@ -17,17 +17,18 @@ class LocationsController < ApplicationController
 
     def create
         @new_location = "#{params[:location][:country]}, #{params[:location][:state]}, #{params[:location][:city]}"        
-       
-        @location = Location.create(location_params)
-        
-        location_match(@new_location)
-       
-       byebug
-        if @location.save 
-            redirect_to location_path(@location)
+
+        if !location_match(@new_location)
+            @location = Location.create(location_params)
+            if @location.save 
+                redirect_to location_path(@location)
+            else 
+                flash[:notice] = "Fill out all fields"
+                redirect_to new_location_path
+            end 
         else 
-            flash[:notice] = "Fill out all fields"
-            redirect_to new_location_path 
+            flash[:notice] = "This location exists. Choose it from the drop down box" 
+            redirect_to new_location_path
         end 
     end 
 

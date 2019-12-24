@@ -9,9 +9,9 @@ module LocationsHelper
 
   
     def location_match(location)
-        locations = Location.all
-        locations.each do |place|
-        if location == place 
+        @locations = Location.all
+        @locations.each do |place|
+        if location == by_location(place) 
             puts "true"
         else 
             puts "false"

@@ -1,5 +1,6 @@
 <h2>Browse review stats by location!</h2>
-    <% @locations_array.collect do |location| %>
+<% @locations.each do |location| %>
+    <%= location_match(@new_location)%>
         <%= by_location(location) %></br>
     <% end %>
 
