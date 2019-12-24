@@ -34,21 +34,35 @@
         <%= reviews_attributes.radio_button :occasion, 'Family' %>Family 
         <%= reviews_attributes.radio_button :occasion, 'Couples' %>Couples 
         <%= reviews_attributes.radio_button :occasion, 'Solo getaway' %>Solo getaway 
-        <%= reviews_attributes.radio_button :occasion, 'Business' %>Business </br>
+        <%= reviews_attributes.radio_button :occasion, 'Business' %>Business </br></br>
 
         How many days were you on vacation? </br>
-        <%= reviews_attributes.text_field :stay_length %></br>
+        <%= reviews_attributes.text_field :stay_length %></br></br>
 
-        1. How satisfied were you with your trip?</br>
-        <%= reviews_attributes.radio_button :satisfaction, 'The happiest I have ever been on Location(atleast that I can remember!)' %> The happiest I have ever been on Location(atleast that I can remember!)</br> 
-        <%= reviews_attributes.radio_button :satisfaction, 'I enjoyed myself' %> I enjoyed myself </br>
-        <%= reviews_attributes.radio_button :satisfaction, 'I know some things that could have used improvement' %> I know some things that could have used improvement </br>
-        <%= reviews_attributes.radio_button :satisfaction, 'Hey, it was a vacation' %> Hey, it was a vacation </br>
-        <%= reviews_attributes.radio_button :satisfaction, 'eh, nothing to mention' %> eh, nothing to mention </br>
-        2. Would you revisit?</br>
-        <%= reviews_attributes.check_box :revisit %> Absolutely </br>
-        <%= reviews_attributes.check_box :revisit %> Maybe </br>
-        <%= reviews_attributes.check_box :revisit %> Probably not </br>
+
+        1. How satisfied were you with your trip?</br></br>
+          <%= "4 = The happiest I have ever been on Location(atleast that I can remember!)" %></br>
+          <%= "3 = I enjoyed myself" %></br>
+          <%= "2 = I know some things that could have used improvement" %></br>
+          <%= "1 = Hey, it was a vacation" %></br>
+          <%= "0 =  eh, nothing to mention" %></br></br>
+
+
+        <%= reviews_attributes.radio_button :satisfaction, '4' %> 4 </br> 
+        <%= reviews_attributes.radio_button :satisfaction, '3' %> 3 </br>
+        <%= reviews_attributes.radio_button :satisfaction, '2' %> 2 </br>
+        <%= reviews_attributes.radio_button :satisfaction, '1' %> 1 </br>
+        <%= reviews_attributes.radio_button :satisfaction, '0' %> 0 </br></br>
+
+        2. Would you revisit?</br></br>
+          <%= "2 = Absolutely" %></br>
+          <%= "1 = Maybe" %></br>
+          <%= "0 = No" %></br></br>
+
+        <%= reviews_attributes.radio_button :revisit, '2' %> 2 </br>
+        <%= reviews_attributes.radio_button :revisit, '1' %> 1 </br>
+        <%= reviews_attributes.radio_button :revisit, '0' %> 0 </br></br>
+
         3. Would you suggest this location to friends and family?</br>
         <%= reviews_attributes.check_box :suggest %> Yes </br>
         <%= reviews_attributes.check_box :suggest %> No </br>
