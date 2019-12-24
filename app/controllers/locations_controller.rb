@@ -16,6 +16,7 @@ class LocationsController < ApplicationController
     end 
 
     def create
+        byebug
         # @new_location = "#{params[:location][:country]}, #{params[:location][:state]}, #{params[:location][:city]}"        
 
         # if !location_match(@new_location)
