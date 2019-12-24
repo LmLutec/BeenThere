@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
 
     def index
         @locations = Location.all 
-       
+        add_by_location(@locations)
     end 
 
     def new
@@ -16,24 +16,25 @@ class LocationsController < ApplicationController
     end 
 
     def create
-        @new_location = "#{params[:location][:country]}, #{params[:location][:state]}, #{params[:location][:city]}"        
+        # @new_location = "#{params[:location][:country]}, #{params[:location][:state]}, #{params[:location][:city]}"        
 
-        if !location_match(@new_location)
+        # if !location_match(@new_location)
             @location = Location.create(location_params)
-            if @location.save 
+            if @location.save
                 redirect_to location_path(@location)
             else 
                 flash[:notice] = "Fill out all fields"
                 redirect_to new_location_path
             end 
-        else 
-            flash[:notice] = "This location exists. Choose it from the drop down box" 
-            redirect_to new_location_path
-        end 
+        # else 
+        #     flash[:notice] = "This location exists. Choose it from the drop down box" 
+        #     redirect_to new_location_path
+        # end 
     end 
 
 
     def show
+        byebug
         @location = Location.find_by(id: params[:id])
     end 
 

@@ -1,7 +1,6 @@
 <h2>Browse review stats by location!</h2>
-<% @locations.each do |location| %>
-    <%= location_match(@new_location)%>
-        <%= by_location(location) %></br>
+<% @locations_array.each do |location| %>
+        <%= link_to location, location_path(location) %></br>
     <% end %>
 
 

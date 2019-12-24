@@ -3,10 +3,28 @@
 <%= form_for @location do |f| %>
 
     Where did you vacation? </br>
-  
-    Location country: <%= f.text_field :country %> </br>
-    Location city: <%= f.text_field :city %> </br>
-    Location state: <%= f.text_field :state %> </br>
+
+    Country: <%= f.text_field :country, list: "countries_autocomplete" %>
+    <datalist id="countries_autocomplete">
+      <% Location.all.each do |location| %>
+        <option value="<%= location.country %>">
+      <% end %>
+    </datalist></br>
+
+    State: <%= f.text_field :state, list: "states_autocomplete" %>
+    <datalist id="states_autocomplete">
+      <% Location.all.each do |location| %>
+        <option value="<%= location.state %>">
+      <% end %>
+    </datalist></br>
+
+    Cities: <%= f.text_field :city, list: "cities_autocomplete" %>
+    <datalist id="cities_autocomplete">
+      <% Location.all.each do |location| %>
+        <option value="<%= location.city %>">
+      <% end %>
+    </datalist></br>
+
 
     <h4>Location reviews</h4>
     <%= f.fields_for :reviews_attributes do |reviews_attributes| %>
