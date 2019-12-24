@@ -6,7 +6,6 @@ class LocationsController < ApplicationController
 
     def index
         @locations = Location.all 
-        byebug
         add_by_location(@locations)
     end 
 
