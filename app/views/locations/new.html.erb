@@ -40,11 +40,11 @@
         <%= reviews_attributes.text_field :stay_length %></br>
 
         1. How satisfied were you with your trip?</br>
-        <%= reviews_attributes.check_box :satisfaction %> The happiest I have ever been on Location(atleast that I can remember!)</br> 
-        <%= reviews_attributes.check_box :satisfaction %> I enjoyed myself </br>
-        <%= reviews_attributes.check_box :satisfaction %> I know some things that could have used improvement </br>
-        <%= reviews_attributes.check_box :satisfaction %> Hey, it was a 'Location' </br>
-        <%= reviews_attributes.check_box :satisfaction %> eh, nothing to mention </br>
+        <%= reviews_attributes.radio_button :satisfaction, 'The happiest I have ever been on Location(atleast that I can remember!)' %> The happiest I have ever been on Location(atleast that I can remember!)</br> 
+        <%= reviews_attributes.radio_button :satisfaction, 'I enjoyed myself' %> I enjoyed myself </br>
+        <%= reviews_attributes.radio_button :satisfaction, 'I know some things that could have used improvement' %> I know some things that could have used improvement </br>
+        <%= reviews_attributes.radio_button :satisfaction, 'Hey, it was a vacation' %> Hey, it was a vacation </br>
+        <%= reviews_attributes.radio_button :satisfaction, 'eh, nothing to mention' %> eh, nothing to mention </br>
         2. Would you revisit?</br>
         <%= reviews_attributes.check_box :revisit %> Absolutely </br>
         <%= reviews_attributes.check_box :revisit %> Maybe </br>
