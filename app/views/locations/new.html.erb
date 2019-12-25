@@ -27,7 +27,7 @@
 
 
     <h4>Location reviews</h4>
-    <%= f.fields_for :reviews_attributes do |reviews_attributes| %>
+    <%= f.fields_for :review do |reviews_attributes| %>
         <%= reviews_attributes.hidden_field :user_id, :value => @user.id %>
     
         What was the occasion for your trip? </br>

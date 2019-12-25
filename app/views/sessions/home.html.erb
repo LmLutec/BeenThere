@@ -8,8 +8,9 @@
     <%= link_to 'View reviews by location', locations_path %></br>
 </br>
 
-<% @user.locations.each do |location| %>
-<%= link_to "Edit #{by_location(location)}", edit_location_path(location) %></br>
+<% @user.reviews.each do |review| %>
+    <% location = review.location %> 
+<%= link_to "Edit #{by_location(review.location)}", edit_location_path(review,location) %></br>
 <% end %>
 
 

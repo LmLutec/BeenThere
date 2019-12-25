@@ -22,11 +22,7 @@ class ReviewsController < ApplicationController
             redirect_to location_path(@location)
     end
 
-    def show 
-    
-    end 
-
-
+  
 
 
     private

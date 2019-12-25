@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
     def new
         @location = Location.new  
         @user = User.find_by(id: session[:user_id])
-        @location.reviews.build(params[:reviews_attributes]) 
+        @location.reviews.build(params[:review]) 
     end 
 
     def create
@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
        
             if @location
                 params.permit!
-                @location.reviews << Review.create(params["location"]["reviews_attributes"])
+                @location.reviews << Review.create(params["location"]["review"])
                 redirect_to location_path(@location)
             elsif !@location  
                 @location = Location.create(location_params)
@@ -38,14 +38,15 @@ class LocationsController < ApplicationController
         @location = Location.find_by(id: params[:id])
     end 
 
-    def edit 
-        @location = Location.find_by(id:params[:id])
+    def edit
         @user = User.find_by(id: session[:user_id])
+        @review = Review.find_by(id: params[:id])
+        @location = @review.location
     end 
 
     def update
         @location = Location.find_by(id: params[:id])
-        @location.update(location_params) 
+        @location.update_attributes(location_params) 
         redirect_to location_path(@location)
     end 
 
@@ -54,7 +55,7 @@ class LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:city, :state, :country, :user_id, :reviews_attributes => [:location_id, :user_id, :occasion, :satisfaction, :revisit, :suggest, :living, :stay_length, :food_rating, :events, :comments, :cost_level])
+        params.require(:location).permit(:city, :state, :country, :user_id, :review => [:location_id, :user_id, :occasion, :satisfaction, :revisit, :suggest, :living, :stay_length, :food_rating, :events, :comments, :cost_level])
     end 
 
     def require_login
