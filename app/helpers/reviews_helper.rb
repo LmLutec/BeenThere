@@ -24,6 +24,12 @@ module ReviewsHelper
         new_rev
     end 
 
+    def food_rating(location)
+        @reviews = location.reviews 
+        a = @reviews.average(:food_rating) / 10 * 100 
+        number_to_percentage(a, strip_insignificant_zeros:true)
+    end
+
 end
 
 
