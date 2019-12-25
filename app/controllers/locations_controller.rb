@@ -46,7 +46,7 @@ class LocationsController < ApplicationController
 
     def update
         @location = Location.find_by(id: params[:id])
-        @location.update_attributes(location_params) 
+        @location.update(location_params) 
         redirect_to location_path(@location)
     end 
 
