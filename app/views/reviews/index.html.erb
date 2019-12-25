@@ -1,7 +1,32 @@
 <h1>Reviews best-rated!</h1>
 <p>Set up view by occasion, with no regards to location</p>
-<% @reviews.each do |review| %>
-    <%= review.location.country%>, <%= review.location.state %></br>
+
+
+<h3>Family review locations</h3>
+<% reviews = Review.where(:occasion => "Family") %>
+<% reviews.order(:satisfaction, :desc).each do |r| %>
+    <details>
+    <summary><%= by_location(r.location) %></summary>
+    <%= "Review created: #{r.created_at.strftime("%b %d, %Y")}" %></br>
+    <%= "Number of full days on vacation: #{r.stay_length}" %></br>
+    <%= "Satisfaction(out of 4): #{r.satisfaction}" %></br>      
+    <%= "Chance of revisit: #{num_to_text(r)}" %></br>   
+    <%= "Suggest to others? : #{r.suggest}" %></br>
+    <%= "Living: #{r.living}" %></br>
+    <%= "Food rating(out of 10): #{r.food_rating}" %></br>
+    <%= "Events: #{r.events}" %></br>
+    <%= "Cost level: #{r.cost_level}" %></br>
+    </details>  
     <% end %>
 
-    <p>By location link</p>
+<% @reviews.each do |review| %>
+    </br>
+    <% end %>
+
+    <%= link_to "See reviews by location", locations_path %>
+
+
+
+   
+                   
+                    
