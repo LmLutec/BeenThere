@@ -13,19 +13,6 @@ module ReviewsHelper
         number_to_percentage(a, strip_insignificant_zeros:true)
     end 
 
-    def avg_suggest(location)
-        @yes = []
-        no = []
-        @reviews = location.reviews 
-        @reviews.each do |review|
-            if review.suggest == "Yes"
-                @yes << review.suggest 
-            else
-                no << review.suggest 
-            end 
-        end   
-     count = @reviews.count
-     f = count / @yes.count
-    end
-    
+ 
+
 end
