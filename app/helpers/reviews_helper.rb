@@ -13,6 +13,19 @@ module ReviewsHelper
         number_to_percentage(a, strip_insignificant_zeros:true)
     end 
 
- 
+    def num_to_text(review)
+        if review.revisit == "2" 
+            new_rev = "Absolutely" 
+        elsif review.revisit == "1"
+            new_rev = "Maybe"
+        else
+            new_rev = "No"
+        end 
+        new_rev
+    end 
 
 end
+
+
+
+                

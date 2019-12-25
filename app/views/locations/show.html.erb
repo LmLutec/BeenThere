@@ -11,8 +11,8 @@
         <details>
           <summary> <%= "Occasion: #{review.occasion}" %></summary></br>
                     <%= "Stay Length: #{review.stay_length}" %></br>
-                    <%= "Satisfaction(out of 4): #{review.satisfaction}" %></br>  
-                    <%= "Revisit(out of 2): #{review.revisit}" %></br>
+                    <%= "Satisfaction(out of 4): #{review.satisfaction}" %></br>      
+                    <%= "Chance of revisit: #{num_to_text(review)}" %></br>   
                     <%= "Suggest to others? : #{review.suggest}" %></br>
                     <%= "Living: #{review.living}" %></br>
                     <%= "Food rating: #{review.food_rating}" %></br>
