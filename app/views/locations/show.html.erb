@@ -1,7 +1,15 @@
-<%= by_location(@location) %> </br>
+<h2><%= by_location(@location) %></h2> </br></br>
+<section id= "ratings">
+<b>Satisfaction rating:</b> <%= avg_satisfied(@location) %>
+<b>Chance of revisit:</b> <%= avg_revisit(@location) %>
 
-    <% @location.reviews.map.with_index do |review,index|%></br>
-          <%= "#{index + 1}:" %></br> <%= "Occasion: #{review.occasion}" %></li></br>
+<b>Reviews available:</b> <%= @location.reviews.count%></br>
+</section>
+
+
+    <% @location.reviews.order(:occasion).each do |review|%></br>
+        <details>
+          <summary> <%= "Occasion: #{review.occasion}" %></summary></br>
                     <%= "Satisfaction: #{review.satisfaction}" %></br>
                     <%= "Comments: #{review.comments}" %></br>  
                     <%= "Revisit: #{review.revisit}" %></br>
@@ -11,20 +19,17 @@
                     <%= "Food rating: #{review.food_rating}" %></br>
                     <%= "Events: #{review.events}" %></br>
                     <%= "Cost level: #{review.cost_level}" %></br>
-                    
+        </details>            
                     <% end %></br></br>
     
-    Satisfaction rating: <%= avg_satisfied(@location) %> 
-    </br></br>
-        
     
-    <h5>Out of 2</h5>
-    Chance of revisit: <%= avg_revisit(@location) %></br>
+        
+   
     
 <p>Heading for occasion and other attributes</p>
 
     
-        <p>review count: <%= @location.reviews.count%></p>
+        
 
 
     
