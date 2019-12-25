@@ -41,11 +41,11 @@
 
 
         1. How satisfied were you with your trip?</br></br>
-          <%= "4 = The happiest I have ever been on Location(atleast that I can remember!)" %></br>
-          <%= "3 = I enjoyed myself" %></br>
-          <%= "2 = I know some things that could have used improvement" %></br>
-          <%= "1 = Hey, it was a vacation" %></br>
-          <%= "0 =  eh, nothing to mention" %></br></br>
+          <%= "4 - The happiest I have ever been on Location(atleast that I can remember!)" %></br>
+          <%= "3 - I enjoyed myself" %></br>
+          <%= "2 - I know some things that could have used improvement" %></br>
+          <%= "1 - Hey, it was a vacation" %></br>
+          <%= "0 -  eh, nothing to mention" %></br></br>
 
 
         <%= reviews_attributes.radio_button :satisfaction, '4' %> 4 </br> 
@@ -55,17 +55,18 @@
         <%= reviews_attributes.radio_button :satisfaction, '0' %> 0 </br></br>
 
         2. Would you revisit?</br></br>
-          <%= "2 = Absolutely" %></br>
-          <%= "1 = Maybe" %></br>
-          <%= "0 = No" %></br></br>
+          <%= "2 - Absolutely" %></br>
+          <%= "1 - Maybe" %></br>
+          <%= "0 - No" %></br></br>
 
         <%= reviews_attributes.radio_button :revisit, '2' %> 2 </br>
         <%= reviews_attributes.radio_button :revisit, '1' %> 1 </br>
         <%= reviews_attributes.radio_button :revisit, '0' %> 0 </br></br>
 
-        3. Would you suggest this location to friends and family?</br>
-        <%= reviews_attributes.check_box :suggest %> Yes </br>
-        <%= reviews_attributes.check_box :suggest %> No </br>
+        3. Would you recommend this location to others?</br>
+        <%= reviews_attributes.radio_button :suggest, 'Yes' %> Yes </br>
+        <%= reviews_attributes.radio_button :suggest, 'No' %> No </br></br>
+        
         4. What were your sleeping arrangements? </br>
         <%= reviews_attributes.check_box :living %> Stayed with family </br>
         <%= reviews_attributes.check_box :living %> Stayed with friends </br>

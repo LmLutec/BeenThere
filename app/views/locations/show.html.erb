@@ -2,7 +2,7 @@
 <section id= "ratings">
 <b>Satisfaction rating:</b> <%= avg_satisfied(@location) %>
 <b>Chance of revisit:</b> <%= avg_revisit(@location) %>
-
+<b>Recommendation rating:</b>  %>
 <b>Reviews available:</b> <%= @location.reviews.count%></br>
 </section>
 
@@ -10,15 +10,15 @@
     <% @location.reviews.order(:occasion).each do |review|%></br>
         <details>
           <summary> <%= "Occasion: #{review.occasion}" %></summary></br>
-                    <%= "Satisfaction: #{review.satisfaction}" %></br>
-                    <%= "Comments: #{review.comments}" %></br>  
-                    <%= "Revisit: #{review.revisit}" %></br>
                     <%= "Stay Length: #{review.stay_length}" %></br>
+                    <%= "Satisfaction(out of 4): #{review.satisfaction}" %></br>  
+                    <%= "Revisit(out of 2): #{review.revisit}" %></br>
+                    <%= "Suggest to others? : #{review.suggest}" %></br>
                     <%= "Living: #{review.living}" %></br>
-                    <%= "Suggestion: #{review.suggest}" %></br>
                     <%= "Food rating: #{review.food_rating}" %></br>
                     <%= "Events: #{review.events}" %></br>
                     <%= "Cost level: #{review.cost_level}" %></br>
+                    <%= "Comments: #{review.comments}" %></br>
         </details>            
                     <% end %></br></br>
     
