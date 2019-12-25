@@ -1,12 +1,11 @@
-<h1>Reviews best-rated!</h1>
-<p>Set up view by occasion, with no regards to location</p>
+<h1>Browse reviews by vacation type!</h1>
 
 
-<h3>Family review locations</h3>
-<% reviews = Review.where(:occasion => "Family") %>
-<% reviews.order(:satisfaction, :desc).each do |r| %>
+<h3>'Business' vacation reviews</h3>
+<% biz_reviews = Review.where(:occasion => "Business") %>
+<% biz_reviews.order(satisfaction: :desc).each do |r| %>
     <details>
-    <summary><%= by_location(r.location) %></summary>
+    <summary><%=by_location(r.location)%></summary>
     <%= "Review created: #{r.created_at.strftime("%b %d, %Y")}" %></br>
     <%= "Number of full days on vacation: #{r.stay_length}" %></br>
     <%= "Satisfaction(out of 4): #{r.satisfaction}" %></br>      
@@ -15,15 +14,70 @@
     <%= "Living: #{r.living}" %></br>
     <%= "Food rating(out of 10): #{r.food_rating}" %></br>
     <%= "Events: #{r.events}" %></br>
-    <%= "Cost level: #{r.cost_level}" %></br>
+    <%= "Cost level: #{r.cost_level}" %></br></br>
+    <%= link_to "See more reviews from this location", location_path(r.location) %>
+    </details>
+<% end %>
+    
+
+<h3>'Couples' vacation reviews</h3>
+<% couple_reviews = Review.where(:occasion => "Couples") %>
+<% couple_reviews.order(satisfaction: :desc).each do |r| %>
+    <details>
+        <summary><%=by_location(r.location)%></summary>
+        <%= "Review created: #{r.created_at.strftime("%b %d, %Y")}" %></br>
+        <%= "Number of full days on vacation: #{r.stay_length}" %></br>
+        <%= "Satisfaction(out of 4): #{r.satisfaction}" %></br>      
+        <%= "Chance of revisit: #{num_to_text(r)}" %></br>   
+        <%= "Suggest to others? : #{r.suggest}" %></br>
+        <%= "Living: #{r.living}" %></br>
+        <%= "Food rating(out of 10): #{r.food_rating}" %></br>
+        <%= "Events: #{r.events}" %></br>
+        <%= "Cost level: #{r.cost_level}" %></br></br>
+        <%= link_to "See more reviews from this location", location_path(r.location) %>
+    </details>
+<% end %>
+
+
+
+<h3>'Family' vacation reviews </h3>
+<% fam_reviews = Review.where(:occasion => "Family") %>
+<% fam_reviews.order(satisfaction: :desc).each do |r| %>
+    <details>
+        <summary><%= by_location(r.location) %></summary>
+        <%= "Review created: #{r.created_at.strftime("%b %d, %Y")}" %></br>
+        <%= "Number of full days on vacation: #{r.stay_length}" %></br>
+        <%= "Satisfaction(out of 4): #{r.satisfaction}" %></br>      
+        <%= "Chance of revisit: #{num_to_text(r)}" %></br>   
+        <%= "Suggest to others? : #{r.suggest}" %></br>
+        <%= "Living: #{r.living}" %></br>
+        <%= "Food rating(out of 10): #{r.food_rating}" %></br>
+        <%= "Events: #{r.events}" %></br>
+        <%= "Cost level: #{r.cost_level}" %></br></br>
+        <%= link_to "See more reviews from this location", location_path(r.location) %>
     </details>  
     <% end %>
 
-<% @reviews.each do |review| %>
-    </br>
+
+<h3>'Solo Getaway' vacation reviews</h3>
+<% solo_reviews = Review.where(:occasion => "Solo getaway") %>
+<% solo_reviews.order(satisfaction: :desc).each do |r| %>
+    <details>
+        <summary><%=by_location(r.location)%></summary>
+        <%= "Review created: #{r.created_at.strftime("%b %d, %Y")}" %></br>
+        <%= "Number of full days on vacation: #{r.stay_length}" %></br>
+        <%= "Satisfaction(out of 4): #{r.satisfaction}" %></br>      
+        <%= "Chance of revisit: #{num_to_text(r)}" %></br>   
+        <%= "Suggest to others? : #{r.suggest}" %></br>
+        <%= "Living: #{r.living}" %></br>
+        <%= "Food rating(out of 10): #{r.food_rating}" %></br>
+        <%= "Events: #{r.events}" %></br>
+        <%= "Cost level: #{r.cost_level}" %></br></br>
+        <%= link_to "See more reviews from this location", location_path(r.location) %>
+        </details>
     <% end %>
 
-    <%= link_to "See reviews by location", locations_path %>
+    
 
 
 
