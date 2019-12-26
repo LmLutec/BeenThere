@@ -10,7 +10,7 @@
 
 <% @user.reviews.each do |review| %>
     <% location = review.location %> 
-<%= link_to "Edit #{by_location(review.location)}", edit_location_path(review,location) %></br>
+<%= link_to "My trip to #{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}", edit_location_review_path(location, review) %></br>
 <% end %>
 
 

@@ -1,0 +1,88 @@
+<h4>Edit your Location!</h4>
+
+<%= form_for @location do |f| %>
+
+  Where did you vacation? </br>
+
+  Country: <%= f.text_field :country, list: "countries_autocomplete" %>
+  <datalist id="countries_autocomplete">
+    <% Location.all.each do |location| %>
+      <option value="<%= location.country %>">
+    <% end %>
+  </datalist></br>
+
+  State: <%= f.text_field :state, list: "states_autocomplete" %>
+  <datalist id="states_autocomplete">
+    <% Location.all.each do |location| %>
+      <option value="<%= location.state %>">
+    <% end %>
+  </datalist></br>
+
+  Cities: <%= f.text_field :city, list: "cities_autocomplete" %>
+  <datalist id="cities_autocomplete">
+    <% Location.all.each do |location| %>
+      <option value="<%= location.city %>">
+    <% end %>
+  </datalist></br>
+
+
+  <h4>Location reviews</h4>
+  <%= f.fields_for @review do |reviews_attributes| %>
+  
+      <%= reviews_attributes.hidden_field :user_id, :value => @user.id %>
+  
+      What was the occasion for your trip? </br>
+      <%= reviews_attributes.radio_button :occasion, 'Family' %>Family 
+      <%= reviews_attributes.radio_button :occasion, 'Couples' %>Couples 
+      <%= reviews_attributes.radio_button :occasion, 'Solo getaway' %>Solo getaway 
+      <%= reviews_attributes.radio_button :occasion, 'Business' %>Business </br></br>
+
+      How many full days were you on vacation?
+      <%= reviews_attributes.text_field :stay_length %></br></br>
+
+
+      1. How satisfied were you with your trip?</br></br>
+        
+      <%= reviews_attributes.radio_button :satisfaction, '4' %> The happiest I have ever been on Location(atleast that I can remember!) </br> 
+      <%= reviews_attributes.radio_button :satisfaction, '3' %> I enjoyed myself </br>
+      <%= reviews_attributes.radio_button :satisfaction, '2' %> I know some things that could have used improvement </br>
+      <%= reviews_attributes.radio_button :satisfaction, '1' %> Hey, it was a vacation </br>
+      <%= reviews_attributes.radio_button :satisfaction, '0' %> eh, nothing to mention </br></br>
+
+      2. Would you revisit?</br></br>
+
+      <%= reviews_attributes.radio_button :revisit, '2' %> Absolutely </br>
+      <%= reviews_attributes.radio_button :revisit, '1' %> Maybe </br>
+      <%= reviews_attributes.radio_button :revisit, '0' %> No </br></br>
+
+      3. Would you recommend this location to others?</br></br>
+      <%= reviews_attributes.radio_button :suggest, 'Yes' %> Yes </br>
+      <%= reviews_attributes.radio_button :suggest, 'No' %> No </br></br>
+
+      4. What were your sleeping arrangements? </br></br>
+      <%= reviews_attributes.radio_button :living, 'Stayed with family' %> Stayed with family </br>
+      <%= reviews_attributes.radio_button :living, 'Stayed with friends' %> Stayed with friends </br>
+      <%= reviews_attributes.radio_button :living, 'Stayed in a hotel' %> Stayed in a hotel </br>
+      <%= reviews_attributes.radio_button :living, 'Stayed in an Air BnB' %> Stayed in an Air BnB </br></br>
+
+      5. Rate the food. Overall, on a scale of 1 to 10(10 being the best tasting) it was a:
+      <%= reviews_attributes.text_field :food_rating %> </br></br>
+
+      6. Was the area full of things to do? </br>
+      <%= reviews_attributes.radio_button :events, 'There were events and attractions everywhere!' %> There were events and attractions everywhere! </br>
+      <%= reviews_attributes.radio_button :events, 'You could bump into an event or two without searching' %> You could bump into an event or two without searching </br>
+      <%= reviews_attributes.radio_button :events, 'There are some good events, but you have to search for some or ask around' %> There are some good events, but you have to search for some or ask around </br>
+      <%= reviews_attributes.radio_button :events, 'There was not much to do, a restaurant here, a bar there' %> There was not much to do, a restaurant here, a bar there </br></br>
+
+      7. Cost level (estimation excluding travel and food):
+      <%= reviews_attributes.text_field :cost_level %> </br></br>
+
+      8. Additional comments: </br>
+      <%= reviews_attributes.text_area :comments %> </br>
+      
+  <% end %>
+  <%= f.submit "Edit review" %>
+<% end %></br></br>
+
+
+<%= link_to 'Return home', home_path %>

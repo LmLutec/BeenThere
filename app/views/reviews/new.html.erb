@@ -1,6 +1,5 @@
 <h4>Location Review</h4>
     <%= form_for :review do |review| %>
-        <%= review.hidden_field :location_id, :value => @location.id %>
         <%= review.hidden_field :user_id, :value => @user.id %>
     
         What was the occasion for your trip? </br>

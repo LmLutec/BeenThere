@@ -1,8 +1,8 @@
 module ReviewsHelper
 
 
-    def avg_satisfied(reviews)
-        @reviews = Location.find_by(id: params[:id]).reviews 
+    def avg_satisfied(location)
+        @reviews = location.reviews 
         a = @reviews.average(:satisfaction) / 4 * 100
         number_to_percentage(a, strip_insignificant_zeros:true)     
     end 
