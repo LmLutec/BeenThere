@@ -19,11 +19,13 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
+  post '/locations/:id/reviews/:id/edit' => 'reviews#update'
+  
 
-  get '/locations/:id/edit' => 'reviews#edit'
-  post '/locations/:id/reviews/:id' => 'reviews#update'
+  # get '/locations/:id/edit' => 'reviews#edit'
+  # post '/locations/:id/edit' => 'reviews#update'
 
-  post '/locations/:id/reviews/new' => 'reviews#show'
+  #post '/locations/:id/reviews/new' => 'reviews#show'
 
 
 
