@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :locations, only: [:edit]
 
-  resources :reviews, only: [:index,:edit, :update]
+  resources :reviews, only: [:index,:edit, :update, :destroy]
 
   resources :sessions, only: [:new, :create]
 

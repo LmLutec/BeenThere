@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find(session[:user_id])
-        @user.delete
+        @user.destroy
         redirect_to '/'
     end 
 
