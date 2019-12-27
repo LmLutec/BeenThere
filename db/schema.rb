@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_155122) do
     t.string "suggest"
     t.string "living"
     t.string "stay_length"
-    t.string "food_rating"
+    t.integer "food_rating"
     t.string "events"
     t.string "comments"
     t.string "cost_level"

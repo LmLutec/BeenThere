@@ -1,13 +1,11 @@
 class Location < ApplicationRecord
+    before_save :capitalize_all 
 
     has_many :reviews
     has_many :users, through: :reviews
 
-    # attr_accessor :reviews
-    # accepts_nested_attributes_for :reviews
 
-
-    validates :city, :state, :country, presence: true 
+    validates :city, :state, :country, presence: true
 
 
   
@@ -18,6 +16,10 @@ class Location < ApplicationRecord
     end 
 
 
-  
+    def capitalize_all
+        self.country.capitalize 
+        self.state.capitalize
+        self.city.capitalize
+    end 
   
 end

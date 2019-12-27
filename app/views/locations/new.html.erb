@@ -65,7 +65,7 @@
         <%= reviews_attributes.radio_button :living, 'Stayed in an Air BnB' %> Stayed in an Air BnB </br></br>
 
         5. Rate the food. Overall, on a scale of 1 to 10(10 being the best tasting) it was a:
-        <%= reviews_attributes.text_field :food_rating %> </br></br>
+        <%= reviews_attributes.number_field :food_rating, within: 0..10 %> </br></br>
 
         6. Was the area full of things to do? </br>
         <%= reviews_attributes.radio_button :events, 'There were events and attractions everywhere!' %> There were events and attractions everywhere! </br>

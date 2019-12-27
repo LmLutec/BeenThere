@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
     include ReviewsHelper
 
     before_action :require_login
+    
 
 
     def index
@@ -73,8 +74,8 @@ class LocationsController < ApplicationController
         unless session[:user_id]
             redirect_to root_path 
         end 
-
     end
+
 end 
 
 
