@@ -30,6 +30,11 @@ module ReviewsHelper
         number_to_percentage(a, strip_insignificant_zeros:true)
     end
 
+    def round_cost_level(review)
+        new_r = number_to_currency(review.cost_level.to_i.round)
+        new_r
+   end
+   
 end
 
 

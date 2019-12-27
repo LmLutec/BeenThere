@@ -18,7 +18,7 @@
                     <%= "Living: #{review.living}" %></br>
                     <%= "Food rating(out of 10): #{review.food_rating}" %></br>
                     <%= "Events: #{review.events}" %></br>
-                    <%= "Cost level: #{review.cost_level}" %></br>
+                    <%= "Cost level: around #{round_cost_level(review)}" %> </br>
                     <%= "Comments: #{review.comments}" %></br>
         </details>            
                     <% end %></br></br>

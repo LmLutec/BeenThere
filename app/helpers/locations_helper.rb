@@ -40,4 +40,6 @@ module LocationsHelper
             end 
         @add 
    end 
+
+
 end
