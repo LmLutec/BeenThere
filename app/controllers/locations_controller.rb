@@ -16,9 +16,16 @@ class LocationsController < ApplicationController
     end 
 
     def create
-        #@location= Location.find_by(country: params[:location][:country], state: params[:location][:state], city: params[:location][:city])
-        @location = Location.create(location_params)
-            # if @location
+        @location= Location.find_by(country: params[:location][:country], state: params[:location][:state], city: params[:location][:city])
+        
+          if location_match(@location)
+            params.permit!
+            @add.reviews << Review.new(params[:location][:review])
+            redirect_to location_path(@add)
+          else  
+            @location = Location.create(location_params)
+            redirect_to location_path(@location)
+          end  
             #     params.permit!
             #     review = Review.create(params["location"]["review"])
             #     @location.reviews << review 
@@ -30,7 +37,6 @@ class LocationsController < ApplicationController
             #     flash[:notice] = "Fill out all fields"
             #     redirect_to new_location_path
             # end 
-       redirect_to location_path(@location)
     end 
 
 

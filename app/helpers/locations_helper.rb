@@ -31,12 +31,13 @@ module LocationsHelper
     def location_match(location)
         @locations = Location.all
         @locations.each do |place|
-        if location == by_location(place) 
-            puts "true"
+        if location == place 
+            @add = place 
         else 
-            puts "false"
+            false
 
         end 
             end 
+        @add 
    end 
 end
