@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
     include ReviewsHelper
 
     before_action :require_login
-    
+    before_action :location_count
 
 
     def index
@@ -76,6 +76,16 @@ class LocationsController < ApplicationController
         end 
     end
 
+    def location_count
+        Location.all.each do |location|
+            total = location.reviews.count 
+        if total == 0
+            location.destroy
+        end 
+            end 
+    end 
+
+   
 end 
 
 
