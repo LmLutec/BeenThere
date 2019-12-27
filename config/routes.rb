@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   root :to => 'users#new'
   
   resources :locations do 
-    resources :reviews, only: [:new, :create, :show, :edit]
+    resources :reviews, only: [:new, :create, :show]
   end 
 
   resources :users
 
-  resources :reviews, only: [:index]
+  resources :locations, only: [:edit]
+
+  resources :reviews, only: [:index,:edit, :update]
 
   resources :sessions, only: [:new, :create]
 
@@ -19,8 +21,7 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
-  post '/locations/:id/reviews/:id/edit' => 'reviews#update'
-  
+  post '/reviews/:id/edit' => 'reviews#update'
 
   # get '/locations/:id/edit' => 'reviews#edit'
   # post '/locations/:id/edit' => 'reviews#update'

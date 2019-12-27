@@ -33,12 +33,14 @@ class ReviewsController < ApplicationController
         @location = @review.location 
     end
   
-    # def update
-    #     @review = Review.find_by(id: params[:id])
-    #     @location= @review.location
-    #     @review.update(review_params)
-    #     @location.update(location_params)
-    # end 
+    def update
+        @review = Review.find_by(id: params[:id])
+        @review.update(review_params)
+        location = @review.location 
+    
+        redirect_to location_path(location)
+        #@location.update(location_params)
+    end 
 
     private
 

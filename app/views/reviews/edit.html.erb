@@ -1,33 +1,10 @@
 <h4>Edit your Location!</h4>
 
-<%= form_for @location do |f| %>
 
-  Where did you vacation? </br>
-
-  Country: <%= f.text_field :country, list: "countries_autocomplete" %>
-  <datalist id="countries_autocomplete">
-    <% Location.all.each do |location| %>
-      <option value="<%= location.country %>">
-    <% end %>
-  </datalist></br>
-
-  State: <%= f.text_field :state, list: "states_autocomplete" %>
-  <datalist id="states_autocomplete">
-    <% Location.all.each do |location| %>
-      <option value="<%= location.state %>">
-    <% end %>
-  </datalist></br>
-
-  Cities: <%= f.text_field :city, list: "cities_autocomplete" %>
-  <datalist id="cities_autocomplete">
-    <% Location.all.each do |location| %>
-      <option value="<%= location.city %>">
-    <% end %>
-  </datalist></br>
 
 
   <h4>Location reviews</h4>
-  <%= f.fields_for @review do |reviews_attributes| %>
+  <%= form_for :review do |reviews_attributes| %>
       <%= reviews_attributes.hidden_field :location_id, :value => @location.id %>
       <%= reviews_attributes.hidden_field :user_id, :value => @user.id %>
   
@@ -80,8 +57,8 @@
       8. Additional comments: </br>
       <%= reviews_attributes.text_area :comments %> </br>
       
-  <% end %>
-  <%= f.submit "Edit review" %>
+  
+  <%= reviews_attributes.submit "Edit review" %>
 <% end %></br></br>
 
 

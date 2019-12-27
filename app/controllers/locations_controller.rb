@@ -12,26 +12,25 @@ class LocationsController < ApplicationController
 
     def new
         @location = Location.new  
-        @user = User.find_by(id: session[:user_id])
-        #@location.reviews.build(params[:review]) 
+        @user = User.find_by(id: session[:user_id]) 
     end 
 
     def create
-        @location= Location.find_by(country: params[:location][:country], state: params[:location][:state], city: params[:location][:city])
-       
-            if @location
-                params.permit!
-                review = Review.create(params["location"]["review"])
-                @location.reviews << review 
-                redirect_to location_review_path(@location,review)
-            elsif !@location  
-                @location = Location.create(location_params)
-                redirect_to location_path(@location)
-            else 
-                flash[:notice] = "Fill out all fields"
-                redirect_to new_location_path
-            end 
-       
+        #@location= Location.find_by(country: params[:location][:country], state: params[:location][:state], city: params[:location][:city])
+        @location = Location.create(location_params)
+            # if @location
+            #     params.permit!
+            #     review = Review.create(params["location"]["review"])
+            #     @location.reviews << review 
+            #     redirect_to location_review_path(@location,review)
+            # elsif !@location  
+            #     @location = Location.create(location_params)
+            #     redirect_to location_path(@location)
+            # else 
+            #     flash[:notice] = "Fill out all fields"
+            #     redirect_to new_location_path
+            # end 
+       redirect_to location_path(@location)
     end 
 
 
@@ -40,14 +39,15 @@ class LocationsController < ApplicationController
         @location = @review.location
     end 
 
-    # def edit
-    #     @user = User.find_by(id: session[:user_id])
-    #     @review = Review.find_by(id: params[:id])
-    #     if @user == @review.id 
-    #         @location = @review.location
-    #     end
+    def edit
+        @user = User.find_by(id: session[:user_id])
+        @location = Location.find_by(id: params[:id])
+        # @review = Review.find_by(id: params[:id])
+        # if @user == @review.id 
+        #     @location = @review.location
+        # end
     
-    # end 
+    end 
 
     def update
         @location = Location.find_by(id: params[:id])

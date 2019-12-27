@@ -1,5 +1,5 @@
     <h3>Welcome back, <%= @user.first_name %></h3>
-    <%= link_to 'Add vacation', new_location_review_path %></br>
+    <%= link_to 'Add vacation', new_location_path %></br>
 
     <%= link_to 'Edit profile', edit_user_path(@user) %></br>
 
@@ -8,11 +8,15 @@
     <%= link_to 'View reviews by location', locations_path %></br>
 </br>
 
+<section id="user_reviews">
 <% @user.reviews.each do |review| %>
     <% location = review.location %> 
-<%= link_to "My trip to #{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}", edit_location_review_path(location, review) %></br>
+My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </br>
+        <%= link_to 'Edit location', edit_location_path(location) %>
+        <%= link_to "Edit my review", edit_review_path(review) %>
+</br>
 <% end %>
-
+</section>
 
 
 
