@@ -6,26 +6,26 @@ class ReviewsController < ApplicationController
         @reviews = Review.all
     end 
 
-    def new
-        @review = Review.new
+    # def new
+    #     @review = Review.new
 
-        # @location = Location.find_by(id: params[:location_id])
-         @user = User.find_by(id: session[:user_id])
-        # @location.users.build 
-        # @location.reviews.build
-    end 
+    #     # @location = Location.find_by(id: params[:location_id])
+    #      @user = User.find_by(id: session[:user_id])
+    #     # @location.users.build 
+    #     # @location.reviews.build
+    # end 
 
-    def create
-        # @location = Location.find_by(id: params[:review][:location_id])
-        # @user = User.find_by(id: session[:user_id])
-        @review = Review.create(review_params)
-        #@location.reviews << @review 
-            redirect_to location_path(@location)
-    end
+    # def create
+    #     # @location = Location.find_by(id: params[:review][:location_id])
+    #     # @user = User.find_by(id: session[:user_id])
+    #     @review = Review.create(review_params)
 
-    def show 
-        @review = Review.find_by(id: params[:id])
-    end 
+    #         redirect_to location_path(@location)
+    # end
+
+    # def show 
+    #     @review = Review.find_by(id: params[:id])
+    # end 
 
     def edit
         @user = User.find_by(id: session[:user_id])
@@ -37,9 +37,7 @@ class ReviewsController < ApplicationController
         @review = Review.find_by(id: params[:id])
         @review.update(review_params)
         location = @review.location 
-    
         redirect_to location_path(location)
-        #@location.update(location_params)
     end 
 
     private
