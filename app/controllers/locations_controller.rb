@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
     include LocationsHelper
     include ReviewsHelper
+    include CommentsHelper
 
     before_action :require_login
     before_action :location_count
@@ -43,7 +44,6 @@ class LocationsController < ApplicationController
 
     def show
         @location = Location.find_by(id: params[:id])
-
     end 
 
     def edit

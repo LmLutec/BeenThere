@@ -1,11 +1,10 @@
-<h2>Browse review stats by location!</h2>
+<h2>Browse reviews by location!</h2>
 <% @locations.each do |location| %>
-        <%= link_to by_location(location), location_path(location) %></br>      
+        <%= link_to by_location(location), location_path(location) %> - Review count: <%= location.reviews.count %></br>      
     <% end %></br></br>
 
 
 <%= link_to 'Home', home_path %>
 
 
-    <p>Highest rate location will appear on this page</p>
 

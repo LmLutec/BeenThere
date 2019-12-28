@@ -5,4 +5,8 @@
         <%= comment.user.first_name %> <%= comment.user.last_name %> says: </br>
         <%= comment.content %>
        <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5></br></br>
-        <% end %> 
+        <% end %> </br></br>
+
+        <%= link_to "Back to locations", locations_path %></br></br>
+
+        <%= link_to "Home", home_path %>

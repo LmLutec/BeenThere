@@ -1,8 +1,7 @@
 module CommentsHelper
 
-    def grab_review_id(review)
-        @r = review.id 
-        @r 
+    def comment_count(review)
+        review.comments.count 
     end 
 
 end
