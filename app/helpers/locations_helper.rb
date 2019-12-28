@@ -7,25 +7,25 @@ module LocationsHelper
         "#{location.country}," + " #{location.state}," + " #{location.city}"
     end 
 
-    def location_to_object(by)
+    # def location_to_object(by)
     
-        Location.all.each do |place|
-            newish = by.split(",")
-            if place.country == newish[0] && place.state == newish[1] && place.city == newish[2]
+    #     Location.all.each do |place|
+    #         newish = by.split(",")
+    #         if place.country == newish[0] && place.state == newish[1] && place.city == newish[2]
             
-                @location.reviews << place.reviews 
-            end 
-        end 
-    end 
+    #             @location.reviews << place.reviews 
+    #         end 
+    #     end 
+    # end 
   
-    def add_by_location(locations)
-        @locations_array = []
+    # def add_by_location(locations)
+    #     @locations_array = []
     
-        locations.each do |location|
-            @locations_array << by_location(location) 
-        end 
-        @locations_array = @locations_array.uniq
-    end 
+    #     locations.each do |location|
+    #         @locations_array << by_location(location) 
+    #     end 
+    #     @locations_array = @locations_array.uniq
+    # end 
 
 
     def location_match(location)

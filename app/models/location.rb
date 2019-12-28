@@ -5,6 +5,7 @@ class Location < ApplicationRecord
 
 
     validates :city, :state, :country, presence: true
+    #validates :city, :state, :country, :uniqueness => { case_sensitive: false }
 
 
   

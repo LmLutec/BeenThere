@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_155122) do
+ActiveRecord::Schema.define(version: 2019_12_28_173928) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.integer "review_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string "city"
@@ -29,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_155122) do
     t.string "stay_length"
     t.integer "food_rating"
     t.string "events"
-    t.string "comments"
+    t.string "additional_info"
     t.string "cost_level"
     t.integer "user_id"
     t.integer "location_id"

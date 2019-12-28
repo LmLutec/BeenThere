@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
 
     def index
         @locations = Location.all 
-        add_by_location(@locations)
+        #add_by_location(@locations)
     end 
 
     def new
@@ -42,8 +42,8 @@ class LocationsController < ApplicationController
 
 
     def show
-        @review = Review.find_by(id: params[:id])
-        @location = @review.location
+        @location = Location.find_by(id: params[:id])
+
     end 
 
     def edit
@@ -67,7 +67,7 @@ class LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:city, :state, :country, :user_id, :review => [:location_id, :user_id, :occasion, :satisfaction, :revisit, :suggest, :living, :stay_length, :food_rating, :events, :comments, :cost_level])
+        params.require(:location).permit(:city, :state, :country, :user_id, :review => [:location_id, :user_id, :occasion, :satisfaction, :revisit, :suggest, :living, :stay_length, :food_rating, :events, :additional_info, :cost_level])
     end 
 
     def require_login

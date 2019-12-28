@@ -9,7 +9,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :stay_length
       t.integer :food_rating
       t.string :events
-      t.string :comments
+      t.string :additional_info
       t.string :cost_level
       t.integer :user_id
       t.integer :location_id

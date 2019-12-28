@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   
   root :to => 'users#new'
+
+  resources :comments
   
   resources :locations do 
-    resources :reviews, only: [:new, :create, :show]
+    resources :reviews, only: [:new, :create, :show] do 
+     resources :comments
+    end
   end 
 
   resources :users
