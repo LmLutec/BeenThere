@@ -1,0 +1,8 @@
+<%= "#{@user.first_name} #{@user.last_name}'s trip to #{by_location(@location)}"%>
+    <h3>comment section</h3>
+
+    <% @comments.each do |comment| %>
+        <%= comment.user.first_name %> <%= comment.user.last_name %> says: </br>
+        <%= comment.content %>
+       <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5></br></br>
+        <% end %> 

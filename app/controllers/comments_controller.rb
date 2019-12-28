@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    include LocationsHelper
 
     def new
         @comment = Comment.new(review_id: params[:review_id], user_id: session[:user_id])
@@ -6,12 +7,16 @@ class CommentsController < ApplicationController
 
     def create
         @comment = Comment.create(comment_params)
-        byebug
-        @user = User.find_by(id: session[:user_id])
-
+        @review = Review.find_by(id: @comment.review_id)
+        @location = @review.location
+        redirect_to location_review_comments_path(@location, @review)
     end 
 
-
+    def index
+        @comments = Review.find_by(id: params[:review_id]).comments
+        @location = Review.find_by(id: params[:review_id]).location
+        @user = Review.find_by(id: params[:review_id]).user
+    end 
 
 
 
