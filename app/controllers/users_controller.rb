@@ -6,11 +6,11 @@ class UsersController < ApplicationController
     end 
 
     def new
-        if session[:user_id] != nil
-            redirect_to home_path
-        else 
+        #if session[:user_id]
+            #redirect_to home_path
+        #else 
             @user = User.new 
-        end 
+        #end
     end 
 
     def create
@@ -18,8 +18,8 @@ class UsersController < ApplicationController
          @user.save
         
         if @user.id 
-            current_user = @user.id
-            redirect_to '/home'
+            session[:user_id] = @user.id
+            redirect_to home_path
         else 
             flash[:notice] = "Complete all fields"
             redirect_to '/'
