@@ -2,19 +2,20 @@ class LocationsController < ApplicationController
     include LocationsHelper
     include ReviewsHelper
     include CommentsHelper
+    include UsersHelper
 
     before_action :require_login
     before_action :location_count
+    before_action :set_location, only: [:show, :edit, :update]
 
 
     def index
         @locations = Location.all 
-        #add_by_location(@locations)
     end 
 
     def new
         @location = Location.new  
-        @user = User.find_by(id: session[:user_id]) 
+        @user = User.find_by(id: current_user)
     end 
 
     def create
@@ -28,36 +29,17 @@ class LocationsController < ApplicationController
             @location = Location.create(location_params)
             redirect_to location_path(@location)
           end  
-            #     params.permit!
-            #     review = Review.create(params["location"]["review"])
-            #     @location.reviews << review 
-            #     redirect_to location_review_path(@location,review)
-            # elsif !@location  
-            #     @location = Location.create(location_params)
-            #     redirect_to location_path(@location)
-            # else 
-            #     flash[:notice] = "Fill out all fields"
-            #     redirect_to new_location_path
-            # end 
+           
     end 
 
 
     def show
-        @location = Location.find_by(id: params[:id])
     end 
 
     def edit
-        @user = User.find_by(id: session[:user_id])
-        @location = Location.find_by(id: params[:id])
-        # @review = Review.find_by(id: params[:id])
-        # if @user == @review.id 
-        #     @location = @review.location
-        # end
-    
     end 
 
     def update
-        @location = Location.find_by(id: params[:id])
         @location.update(location_params) 
         redirect_to location_path(@location)
     end 
@@ -83,6 +65,10 @@ class LocationsController < ApplicationController
             location.destroy
         end 
             end 
+    end 
+
+    def set_location
+        @location = Location.find_by(id: params[:id])
     end 
 
    

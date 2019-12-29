@@ -26,10 +26,10 @@
                        <b><%= comment.user.first_name %> <%= comment.user.last_name %></b> says: </br>
                         <%= comment.content %>
                     <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5></br></br>
-                        <% end %>
-                    <%= link_to "Add Comment", new_location_review_comment_path(review.location, review.id) %>
-                    <% end %></br></br>
-        </details>            
+                        <% end %></br>
+                    <%= link_to "Add Comment", new_location_review_comment_path(review.location, review.id) %></br></br>
+        </details>
+                    <% end %></br></br>            
     </br></br>
         
 <%= link_to 'Browse by occasion', reviews_path %></br></br>   
