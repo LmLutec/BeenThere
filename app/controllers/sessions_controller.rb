@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     end 
 
     def home
-        @user = User.find_by(id: current_user)
+        @user = User.find_by(id: session[:user_id])
         render "home"
     end 
 

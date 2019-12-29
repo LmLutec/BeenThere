@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end 
 
     def new
-        if session[:user_id]
+        if session[:user_id] != nil
             redirect_to home_path
         else 
             @user = User.new 
