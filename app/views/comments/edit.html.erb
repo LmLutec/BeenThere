@@ -1,0 +1,6 @@
+<%= form_for @comment do |f| %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :review_id %>
+  <h3>Comment: </h3><%= f.text_area :content %>
+    <%= f.submit "Edit comment" %>
+    <% end %>

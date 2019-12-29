@@ -18,7 +18,23 @@ class CommentsController < ApplicationController
         @user = Review.find_by(id: params[:review_id]).user
     end 
 
+    def edit 
+        @comment = Comment.find_by(id: params[:id])
+    end 
 
+    def update
+        @comment = Comment.find_by(id: params[:id])
+        @review = Review.find_by(id: @comment.review_id)
+        @location = @review.location
+        @comment.update(comment_params)
+        redirect_to location_review_comments_path(@location, @review)
+    end 
+
+    def destroy
+        @comment = Comment.find_by(id: params[:id])
+        @comment.destroy 
+        redirect_to home_path
+    end 
 
     private
 

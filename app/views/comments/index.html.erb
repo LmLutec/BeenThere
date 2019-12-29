@@ -4,9 +4,17 @@
     <% @comments.each do |comment| %>
         <%= comment.user.first_name %> <%= comment.user.last_name %> says: </br>
         <%= comment.content %>
-       <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5></br></br>
+       <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
+       <% if comment.user_id == session[:user_id] %>
+        <%= link_to "edit comment", edit_location_review_comment_path(@location, comment.review_id, comment) %></br></br>
+        <%= button_to "delete comment", location_review_comment_path(@location, comment.review_id, comment), :method => "delete" %></br>
+       <% end %></br>
         <% end %> </br></br>
 
         <%= link_to "Back to locations", locations_path %></br></br>
 
         <%= link_to "Home", home_path %>
+
+
+
+    <p>add border between comments</p>

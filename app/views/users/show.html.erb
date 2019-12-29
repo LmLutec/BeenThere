@@ -1,5 +1,25 @@
-<h3> User's show page</h3>
+<h3><%=@user.first_name%> <%=@user.last_name%>'s reviews</h3>
     <% @user.reviews.each do |review| %>
-        <%= review.occasion %>
+        <details>
+            <summary>Trip to: <%= by_location(review.location) %></summary>
+            Review created: <%= review.created_at.strftime("%b %d, %Y") %></br>
+            Occasion: <%= review.occasion %></br>
+            Satisfaction: <%= review.satisfaction %></br>
+            Revisit: <%= review.revisit %></br> 
+            Suggest: <%= review.suggest %></br>
+            Living: <%= review.living %></br>
+            Stay length: <%= review.stay_length %></br>
+            Food rating: <%= review.food_rating %></br>
+            Events: <%= review.events %></br>
+            Comments: <%= review.additional_info %></br>
+            Cost level: $<%= review.cost_level %></br></br>
+        <% review.comments.each do |comment| %>
+            <b><%= comment.user.first_name %> <%= comment.user.last_name %></b> says: </br>
+            <%= comment.content %></br>
+            <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
         <% end %>
+        <%= link_to "Add Comment", new_location_review_comment_path(review.location, review.id) %></br></br>
+        </details>
+    <% end %></br></br>
+        <%= link_to "Home", home_path %></br>
 
