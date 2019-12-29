@@ -20,8 +20,7 @@ class LocationsController < ApplicationController
 
     def create
         @location= Location.find_by(country: params[:location][:country], state: params[:location][:state], city: params[:location][:city])
-        #option: grab location by 'location' using where? and delete line 22. allow users to create multiple instances of same location so users can edit their location
-        #option: find a way to match a location instance with a specific user to edit
+        
           if location_match(@location)
             params.permit!
             @add.reviews << Review.new(params[:location][:review])
