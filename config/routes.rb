@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :locations, only: [:edit]
+  #resources :locations, only: [:edit]
 
   resources :reviews, only: [:index,:edit, :update, :destroy]
 
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
+  #get '/reviews/:id/edit' =>'locations#new'
   post '/reviews/:id/edit' => 'reviews#update'
 
   # get '/locations/:id/edit' => 'reviews#edit'

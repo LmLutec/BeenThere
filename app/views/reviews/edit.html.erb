@@ -1,7 +1,4 @@
-<h4>Edit your Location!</h4>
-
-
-
+<h4>Edit your review!</h4>
 
   <h4>Location reviews</h4>
   <%= form_for :review do |reviews_attributes| %>
@@ -56,10 +53,10 @@
 
       8. Additional comments: </br>
       <%= reviews_attributes.text_area :additional_info %> </br>
-      
-  
-  <%= reviews_attributes.submit "Edit review" %>
-<% end %></br></br>
+
+      <%= reviews_attributes.submit "Edit review" %>
+
+  <% end %></br></br>
 
 
 <%= link_to 'Return home', home_path %>
