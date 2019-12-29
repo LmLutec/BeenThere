@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    include UsersHelper
 
     def new
         @user = User.new 
@@ -19,7 +20,7 @@ class SessionsController < ApplicationController
     end 
 
     def home
-        @user = User.find_by(id: session[:user_id])
+        @user = User.find_by(id: current_user)
         render "home"
     end 
 

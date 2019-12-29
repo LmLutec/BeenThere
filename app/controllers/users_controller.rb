@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
         @users = User.all 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
          @user.save
         
         if @user.id 
-            session[:user_id] = @user.id
+            current_user = @user.id
             redirect_to '/home'
         else 
             flash[:notice] = "Complete all fields"
@@ -23,22 +23,18 @@ class UsersController < ApplicationController
     end 
 
     def show
-        @user = User.find_by(id: params[:id])
     end 
 
     def edit 
-        @user = User.find_by(id: params[:id])
     end 
 
     def update
-        @user = User.find_by(id: params[:id])
         @user.update(user_params)
         @user.save 
         redirect_to user_path(@user)
     end 
 
     def destroy
-        @user = User.find(session[:user_id])
         @user.destroy
         redirect_to '/'
     end 
@@ -49,4 +45,8 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:first_name, :last_name, :age, :email, :password)
     end
+
+    def set_user 
+        @user = User.find_by(id: params[:id])
+    end 
 end
