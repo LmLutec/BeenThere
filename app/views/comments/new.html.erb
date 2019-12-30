@@ -3,4 +3,16 @@
     <%= f.hidden_field :review_id %>
   <h3>Comment: </h3><%= f.text_area :content %>
     <%= f.submit "Post comment" %>
+
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h3><%= pluralize(@comment.errors.count, "error") %> Fix errors to leave comment: </h3>
+        <% @comment.errors.full_messages.each do |m| %>
+          <%= m %>
+        <% end %>
+      </div>
     <% end %>
+    
+<% end %>
+
+

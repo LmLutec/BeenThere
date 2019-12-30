@@ -9,8 +9,14 @@ class CommentsController < ApplicationController
         @comment = Comment.create(comment_params)
         @review = Review.find_by(id: @comment.review_id)
         @location = @review.location
-        redirect_to location_review_comments_path(@location, @review)
-    end 
+       
+        if !@comment 
+            redirect_to new_location_review_comment_path(@location, @review)
+        else
+            redirect_to location_review_comments_path(@location, @review)
+    
+        end 
+    end
 
     def index
         @comments = Review.find_by(id: params[:review_id]).comments
