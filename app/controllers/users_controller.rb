@@ -5,12 +5,8 @@ class UsersController < ApplicationController
         @users = User.all 
     end 
 
-    def new
-        #if session[:user_id]
-            #redirect_to home_path
-        #else 
+    def new 
             @user = User.new 
-        #end
     end 
 
     def create

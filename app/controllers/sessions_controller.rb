@@ -2,11 +2,7 @@ class SessionsController < ApplicationController
     include UsersHelper
 
     def new
-        if current_user
-            redirect_to home_path
-        else 
-             @user = User.new
-        end  
+        @user = User.new 
     end 
 
     def create
