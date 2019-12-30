@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
 
     before_action :require_login
     before_action :location_count
-
+    before_action :set_location, only: [:show, :edit, :update]
 
 
     def index
@@ -37,15 +37,12 @@ class LocationsController < ApplicationController
 
 
     def show
-        @location = Location.find_by(id: params[:id]) || @location = Location.find_by(params[:id])
     end 
 
     def edit 
-        @location = Location.find_by(id: params[:id]) || @location = Location.find_by(params[:id])
     end 
 
     def update
-        @location = Location.find_by(id: params[:id])
         @user = User.find_by(id: current_user)
          if @user.locations.include?(@location)
             @r = Review.find_by(location_id: @location, user_id: @user)
@@ -79,9 +76,9 @@ class LocationsController < ApplicationController
             end 
     end 
 
-    # def set_location
-    #     @location = Location.find_by(id: params[:id])
-    # end 
+    def set_location
+        @location = Location.find_by(id: params[:id]) || @location = Locatino.find_by(params[:id])
+    end 
 
    
 end 
