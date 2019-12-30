@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+    before_action :set_review, only: [:edit, :update, :destroy]
 
 
     def index
@@ -8,19 +8,16 @@ class ReviewsController < ApplicationController
 
     def edit
         @user = User.find_by(id: session[:user_id])
-        @review = Review.find_by(id: params[:id])
         @location = @review.location 
     end
   
     def update
-        @review = Review.find_by(id: params[:id])
         @review.update(review_params)
         location = @review.location 
         redirect_to location_path(location)
     end 
 
     def destroy
-        @review = Review.find_by(id: params[:id])
         @review.destroy 
         redirect_to home_path
     end 
@@ -31,4 +28,7 @@ class ReviewsController < ApplicationController
         params.require(:review).permit( :user_id, :location_id, :location, :occasion, :satisfaction, :revisit, :suggest, :living, :stay_length, :food_rating, :events, :additional_info, :cost_level)
     end
 
+    def set_review
+        @review = Review.find_by(id: params[:id])
+    end 
 end
