@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   #resources :locations, only: [:edit]
 
   resources :reviews, only: [:index,:edit, :update, :destroy]
+  post '/reviews/:id/edit' => 'reviews#update'
+
 
   resources :sessions, only: [:new, :create]
+  get '/auth/facebook/callback' => 'sessions#create'
 
   get '/login' => 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -26,7 +29,6 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   #get '/reviews/:id/edit' =>'locations#new'
-  post '/reviews/:id/edit' => 'reviews#update'
 
   # get '/locations/:id/edit' => 'reviews#edit'
   # post '/locations/:id/edit' => 'reviews#update'
