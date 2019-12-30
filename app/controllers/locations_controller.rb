@@ -26,6 +26,9 @@ class LocationsController < ApplicationController
             @add.reviews << Review.new(params[:location][:review])
             redirect_to location_path(@add)
           else  
+            params[:location][:country] = params[:location][:country].capitalize
+            params[:location][:state] = params[:location][:state].capitalize
+            params[:location][:city] = params[:location][:city].capitalize
             @location = Location.create(location_params)
             redirect_to location_path(@location)
           end  

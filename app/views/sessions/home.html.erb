@@ -8,12 +8,15 @@
     <%= link_to 'View reviews by location', locations_path %></br>
 </br>
 
+<%= link_to "View all of my reviews", user_path(@user) %></br></br>
+
 <section id="user_reviews">
 <% @user.reviews.each do |review| %>
     <% location = review.location %> 
 My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </br>
         <%= link_to 'Edit location', edit_location_path(location) %></br>
         <%= link_to "Edit my review", edit_review_path(review) %></br>
+       
         <%= button_to "Delete my review", review, :method => "delete" %>
         
 </br>

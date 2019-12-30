@@ -1,5 +1,3 @@
-config.force_ssl = true
-
 require_relative 'boot'
 
 require 'rails/all'
