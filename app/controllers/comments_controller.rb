@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
         @location = @review.location
        
         if !@comment 
+            flash[:errors] = @comment.errors
             redirect_to new_location_review_comment_path(@location, @review)
         else
             redirect_to location_review_comments_path(@location, @review)
