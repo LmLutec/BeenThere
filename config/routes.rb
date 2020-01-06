@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
 
   resources :sessions, only: [:new, :create]
-  get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/google_oauth2/callback' => 'sessions#google_auth'
+
+  #devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get '/login' => 'sessions#new'
   post '/login', to: 'sessions#create'
