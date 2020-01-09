@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_173928) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "age"
+    t.integer "age", default: 18
     t.string "email"
     t.string "password_digest"
     t.string "uid"

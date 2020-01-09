@@ -11,5 +11,9 @@ class User < ApplicationRecord
     validates :first_name, :last_name, :age, :email, :password, presence: true 
     validates_uniqueness_of :email, :case_sensitive => false
     
+    def self.from_omniauth(auth)
+        byebug
+    end
+
 end
 

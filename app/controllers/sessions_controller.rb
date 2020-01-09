@@ -7,31 +7,39 @@ class SessionsController < ApplicationController
     end 
 
     def google_auth
-      @user = User.from_omniauth(request.env['omniauth.auth'])
+      
+      @user = User.find_by(email: auth['info']['email']) 
 
-      # @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      #   u.name = auth['info']['name']
-      #   u.email = auth['info']['email']
-      #   u.image = auth['info']['image']
-      # end
-   
-      session[:user_id] = @user.id
-   
+      if @user 
+          session[:user_id] = @user.id 
+          redirect_to home_path 
+      else 
+        @user = User.new
+        @user.uid = auth['uid']
+        @user.first_name = auth['info']['first_name']
+        @user.last_name = auth['info']['last_name']
+        @user.email = auth['info']['email']
+        @user.password = 'omniauthpw'
+        @user.save
+
+        session[:user_id] = @user.id
+        redirect_to home_path
+  
+      end 
     end 
 
     def create
-          render 'home'
-        # @user = User.find_by(email: params[:user][:email])
-        # if @user 
-        #     if @user.authenticate(params[:user][:password])
-        #         session[:user_id] = @user.id 
-        #         render "home"
-        #     else
-        #         redirect_to root_path
-        #     end 
-        # else
-        #     redirect_to root_path
-        #end 
+        @user = User.find_by(email: params[:user][:email])
+        if @user 
+            if @user.authenticate(params[:user][:password])
+                session[:user_id] = @user.id 
+                render "home"
+            else
+                redirect_to root_path
+            end 
+        else
+            redirect_to root_path
+        end 
     end 
 
     def home
