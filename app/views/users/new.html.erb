@@ -1,4 +1,6 @@
+
 <h2><%= notice %></h2>
+
 <h1>New User Registration</h1></br>
 <%= form_for @user do |f| %>
     First name: <%= f.text_field :first_name %>
@@ -6,8 +8,28 @@
     Age: <%= f.text_field :age %>
     Email: <%= f.text_field :email %>
     Password: <%= f.password_field :password %></br></br>
+
 <%= f.submit "Create user account" %>
+
+<% if !@user.save %>
+<div id="error_explanation">
+<h2>
+<%= pluralize(@user.errors.count, "error") %>
+prohibited this post from being saved:
+</h2>
+ 
+<ul>
+<% @user.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
 <% end %></br></br>
+
+
+
+	<% end %>
+
 
 
 </br>
