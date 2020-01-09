@@ -9,13 +9,7 @@ class CommentsController < ApplicationController
         @comment = Comment.create(comment_params)
         @review = Review.find_by(id: @comment.review_id)
         @location = @review.location
-       
-        if !@comment 
-            render :action => "new" 
-            #'new_location_review_comment_path(@location, @review)
-        else
-            redirect_to location_review_comments_path(@location, @review)
-        end 
+        redirect_to location_review_comments_path(@location, @review)
     end
 
     def index
