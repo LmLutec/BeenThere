@@ -1,6 +1,8 @@
 <h4>Edit your review!</h4>
 
   <h4>Location reviews</h4>
+
+
   <%= form_for :review do |reviews_attributes| %>
       <%= reviews_attributes.hidden_field :location_id, :value => @location.id %>
       <%= reviews_attributes.hidden_field :user_id, :value => @user.id %>
