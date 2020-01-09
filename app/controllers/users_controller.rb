@@ -17,8 +17,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to home_path
         else 
-            flash[:notice] = "Complete all fields"
-            redirect_to '/'
+            render '/users/new'
         end 
     end 
 
