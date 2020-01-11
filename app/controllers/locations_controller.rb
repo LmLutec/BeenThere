@@ -7,6 +7,8 @@ class LocationsController < ApplicationController
     before_action :require_login
     before_action :location_count
     before_action :set_location, only: [:show, :edit, :update]
+    before_action :set_user, only: [:new, :create, :update]
+    
 
 
     def index
@@ -15,7 +17,6 @@ class LocationsController < ApplicationController
 
     def new
         @location = Location.new  
-        @user = User.find_by(id: current_user)
     end 
 
     def create
@@ -23,14 +24,24 @@ class LocationsController < ApplicationController
         
           if location_match(@location)
             params.permit!
-            @add.reviews << Review.new(params[:location][:review])
-            redirect_to location_path(@add)
+            new_review =  Review.new(params[:location][:review])
+            if new_review
+                @add.reviews << new_review
+                redirect_to location_path(@add)
+            else 
+                render 'locations/new' 
+            end 
           else  
             params[:location][:country] = params[:location][:country].capitalize
             params[:location][:state] = params[:location][:state].capitalize
             params[:location][:city] = params[:location][:city].capitalize
             @location = Location.create(location_params)
-            redirect_to location_path(@location)
+           
+            if @location.save
+                redirect_to location_path(@location)
+            else
+                render 'locations/new'
+            end 
           end  
            
     end 
@@ -43,13 +54,13 @@ class LocationsController < ApplicationController
     end 
 
     def update
-        @user = User.find_by(id: current_user)
-         if @user.locations.include?(@location)
+        
+        if @user.locations.include?(@location)
             @r = Review.find_by(location_id: @location, user_id: @user)
-             @new = Location.create(location_params)
-             @new.reviews << @r 
-             redirect_to location_path(@new)
-         end
+            @new = Location.create(location_params)
+            @new.reviews << @r 
+            redirect_to location_path(@new)
+        end
         
     end 
 
@@ -80,6 +91,9 @@ class LocationsController < ApplicationController
         @location = Location.find_by(id: params[:id]) || @location = Locatino.find_by(params[:id])
     end 
 
+    def set_user
+        @user = User.find_by(id: current_user)
+    end 
    
 end 
 
