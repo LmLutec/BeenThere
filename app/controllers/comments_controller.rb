@@ -7,9 +7,14 @@ class CommentsController < ApplicationController
 
     def create
         @comment = Comment.create(comment_params)
-        @review = Review.find_by(id: @comment.review_id)
-        @location = @review.location
-        redirect_to location_review_comments_path(@location, @review)
+        if @comment.save 
+            @review = Review.find_by(id: @comment.review_id)
+            @location = @review.location
+            redirect_to location_review_comments_path(@location, @review)
+        else 
+            
+            render 'comments/new'
+        end 
     end
 
     def index
@@ -26,8 +31,11 @@ class CommentsController < ApplicationController
         @comment = Comment.find_by(id: params[:id])
         @review = Review.find_by(id: @comment.review_id)
         @location = @review.location
-        @comment.update(comment_params)
-        redirect_to location_review_comments_path(@location, @review)
+        if @comment.update(comment_params)
+            redirect_to location_review_comments_path(@location, @review)
+        else 
+            render 'comments/edit'
+        end 
     end 
 
     def destroy
