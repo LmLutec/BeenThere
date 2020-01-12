@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :reviews, only: [:index,:edit, :update, :destroy]
-  post '/reviews/:id/edit' => 'reviews#update'
+  post '/reviews/:id/' => 'reviews#update'
 
 
   resources :sessions, only: [:new, :create]

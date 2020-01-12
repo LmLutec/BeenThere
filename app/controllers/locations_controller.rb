@@ -54,7 +54,6 @@ class LocationsController < ApplicationController
     end 
 
     def update
-        
         if @user.locations.include?(@location)
             @r = Review.find_by(location_id: @location, user_id: @user)
             @new = Location.create(location_params)

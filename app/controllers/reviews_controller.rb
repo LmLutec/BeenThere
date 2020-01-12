@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    include UsersHelper
+
     before_action :set_review, only: [:edit, :update, :destroy]
 
 
@@ -12,9 +14,15 @@ class ReviewsController < ApplicationController
     end
   
     def update
-        @review.update(review_params)
-        location = @review.location 
-        redirect_to location_path(location)
+
+        @user = User.find_by(id: current_user)
+        @location = @review.location
+
+        if @review.update(review_params)
+          redirect_to location_path(@location)
+        else 
+          render 'reviews/edit'
+        end 
     end 
 
     def destroy
