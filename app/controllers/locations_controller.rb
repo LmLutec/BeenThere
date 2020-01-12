@@ -57,10 +57,12 @@ class LocationsController < ApplicationController
         if @user.locations.include?(@location)
             @r = Review.find_by(location_id: @location, user_id: @user)
             @new = Location.create(location_params)
+            
             if @new.save
                 @new.reviews << @r 
                 redirect_to location_path(@new)
             else 
+                @location = @new
                 render 'locations/edit'
             end 
         end

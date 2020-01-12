@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
             @location = @review.location
             redirect_to location_review_comments_path(@location, @review)
         else 
-            
             render 'comments/new'
         end 
     end

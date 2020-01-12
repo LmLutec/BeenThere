@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:index,:edit, :update, :destroy]
   post '/reviews/:id/' => 'reviews#update'
+  post '/reviews/:id/edit' => 'reviews#update'
 
 
   resources :sessions, only: [:new, :create]

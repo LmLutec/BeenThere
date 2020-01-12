@@ -1,14 +1,21 @@
     <h3>Welcome back, <%= @user.first_name %></h3>
-    <%= link_to 'Add vacation', new_location_path %></br>
+   <ul>
 
-    <%= link_to 'Edit profile', edit_user_path(@user) %></br>
+    <li><%= link_to 'Add vacation', new_location_path %></br> </li>
 
-    <%= link_to 'View reviews by occasion', reviews_path %></br>
+    <li><%= link_to 'View reviews by occasion', reviews_path %></br> </li>
 
-    <%= link_to 'View reviews by location', locations_path %></br>
+    <li><%= link_to 'View reviews by location', locations_path %></br> </li>
+
+    <li><%= link_to "View all of my reviews", user_path(@user) %></br></br></li>
+
+    <li><%= link_to 'Edit profile', edit_user_path(@user) %></br></br> </li>
+    <li><%= link_to 'Logout', logout_path, method: 'post' %></br></li>
+
+
+   </ul>
 </br>
 
-<%= link_to "View all of my reviews", user_path(@user) %></br></br>
 
 <section id="user_reviews">
 <% @user.reviews.each do |review| %>
@@ -23,9 +30,20 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 <% end %>
 </section>
 
+<section id="incoming">
+<p>Comments on my reviews</p>
+<details open>
+<% @user.comments_received.each do |comment| %>
+        <b><summary><%=by_location(comment.review.location)%></summary></b>
+        <%= comment.content %>
+</details>
+<% end %>
 
+</section>
 
-    <%= link_to 'Logout', logout_path, method: 'post' %></br>
+<p>location with top review</p>
+   
+
 
 </br>
     <%= button_to 'Delete Profile', user_path(@user), :method => "delete" %>
