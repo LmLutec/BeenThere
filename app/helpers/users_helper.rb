@@ -18,4 +18,13 @@ module UsersHelper
     current_user
    end 
 
+
+   def incoming_comments 
+      user_received = []
+      comments = User.find_by(id: current_user).comments_received
+      comments.each do |comment|
+         user_received << comment.content
+      end 
+      user_received.join(",")
+   end 
 end
