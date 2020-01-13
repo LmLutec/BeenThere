@@ -32,12 +32,15 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 
 <section id="incoming">
 <p>Comments on my reviews</p>
-<details open>
+
 <% @user.comments_received.each do |comment| %>
-        <b><summary><%=by_location(comment.review.location)%></summary></b>
-        <%= comment.content %>
-</details>
+    <details open>
+        <summary><%=by_location(comment.review.location)%></summary>
+       <b><%= comment.user.first_name %></b> said: "<%= comment.content %>" </br>
+       <%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %>
+    </details></br>
 <% end %>
+
 
 </section>
 
