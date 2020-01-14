@@ -33,7 +33,13 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 <section id="incoming">
 <p>Comments on my reviews</p>
 
-<%= incoming_comments %>
+<% incoming_comments.each do |comment| %>
+    <details open>
+    <summary><%="#{@location}"%></summary>
+    <%= "#{@user} said #{comment}"%></br>
+    <h5><%= @comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
+    </details>
+    <%end%>
 
 
 </section>
