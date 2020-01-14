@@ -21,16 +21,17 @@ module UsersHelper
 
    def incoming_comments 
       user_received = []
+
       comments = User.find_by(id: current_user).comments_received
       comments.each do |comment|
-         user_received << comment.content
          @user = comment.user.first_name
          @comment = comment 
-         @location = by_location(comment.review.location)
+         
+         user_received << @comment 
 
       end 
       user_received
-      
+   
    end 
 end
 

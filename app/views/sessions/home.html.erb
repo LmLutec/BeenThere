@@ -35,9 +35,9 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 
 <% incoming_comments.each do |comment| %>
     <details open>
-    <summary><%="#{@location}"%></summary>
-    <%= "#{@user} said #{comment}"%></br>
-    <h5><%= @comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
+    <summary><%= by_location(comment.review.location)%></summary>
+    <b><%="#{@user}"%></b> <%= "said #{comment.content}"%></br>
+    <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
     </details>
     <%end%>
 
