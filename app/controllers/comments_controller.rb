@@ -22,6 +22,9 @@ class CommentsController < ApplicationController
         @user = Review.find_by(id: params[:review_id]).user
     end 
 
+    def show
+    end
+
     def edit 
         @comment = Comment.find_by(id: params[:id])
     end 

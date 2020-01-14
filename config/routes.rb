@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end 
 
+  get '/comments/:id' => 'locations#show'
+  
   resources :users
 
   resources :reviews, only: [:index,:edit, :update, :destroy]
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   get '/home', to: 'sessions#home'
+  #post '/home', to: 'sessions#home'
 
   get '/logout' => 'sessions#destroy'
 
