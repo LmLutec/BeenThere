@@ -34,6 +34,16 @@ module ReviewsHelper
         new_r = number_to_currency(review.cost_level.to_i.round)
         new_r
    end
+
+   def highest_food_rating
+    food = []
+    @locations.each do |location|
+        if food_rating(location).between?("100%,90%")
+            food << ["#{by_location(location)}","#{food_rating(location)}"] 
+        end 
+    end 
+        food.min
+   end 
    
 end
 

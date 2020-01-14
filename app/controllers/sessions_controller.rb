@@ -45,6 +45,7 @@ class SessionsController < ApplicationController
     def home
         @user = User.find_by(id: session[:user_id]) || @user = User.find_by(session[:user_id])
         @reviews = Review.all 
+        @locations = Location.all 
         render "home"
     end 
 

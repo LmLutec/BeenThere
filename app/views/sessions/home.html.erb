@@ -39,14 +39,14 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
     <b><%="#{@user}"%></b> <%= "said #{comment.content}"%></br>
     <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
     <%= link_to 'View comment', location_path(comment.review.location) %>
-    <%= link_to 'clear comments', @user_received.delete(comment) %>
 
     </details>
     <%end%>
 
 </section>
 
-<p>location with top review</p>
+<p>Vacation spot with top rated food!</p>
+<%= highest_food_rating[0] %> , <%=highest_food_rating[1] %>
    
 
 
