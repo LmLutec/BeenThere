@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   get '/home', to: 'sessions#home'
-  #post '/home', to: 'sessions#home'
+  
 
   get '/logout' => 'sessions#destroy'
 

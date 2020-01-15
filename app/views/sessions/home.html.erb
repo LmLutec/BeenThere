@@ -34,13 +34,16 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 <p>Comments on my reviews</p>
 
 <% incoming_comments.each do |comment| %>
+    <% if comment.created_at > 1.week.ago %>
     <details open>
     <summary><%= by_location(comment.review.location)%></summary>
     <b><%="#{@user}"%></b> <%= "said #{comment.content}"%></br>
     <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
     <%= link_to 'View comment', location_path(comment.review.location) %>
-
     </details>
+    <% else %>
+        <%= "You do not have any new comments" %>
+    <% end %>
     <%end%>
 
 </section>
