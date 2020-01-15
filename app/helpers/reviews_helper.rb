@@ -1,3 +1,4 @@
+require 'pry'
 module ReviewsHelper
 
 
@@ -36,14 +37,15 @@ module ReviewsHelper
    end
 
    def highest_food_rating
-    food = []
+    @food = []
     @locations.each do |location|
-        if food_rating(location).between?("100%,90%")
-            food << ["#{by_location(location)}","#{food_rating(location)}"] 
+        if food_rating(location) == "100%" || food_rating(location).between?("90%","99%") 
+            @food << ["#{by_location(location)}","#{food_rating(location)}"] 
+                end 
         end 
-    end 
-        food.min
+    @food
    end 
+   
    
 end
 
