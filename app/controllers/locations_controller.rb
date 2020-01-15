@@ -93,7 +93,7 @@ class LocationsController < ApplicationController
     end 
 
     def set_location
-        @location = Location.find_by(id: params[:id]) || @location = Locatino.find_by(params[:id])
+        @location = Location.find_by(id: params[:id]) || @location = Location.find_by(params[:id])
     end 
 
     def set_user
