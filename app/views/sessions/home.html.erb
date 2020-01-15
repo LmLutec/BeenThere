@@ -44,12 +44,13 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
     <%end%>
 
 </section>
-
-<p>Vacation spot with top rated food!</p>
+<section id="top_food">
+<p>Vacation spots with top rated food!</p>
 <% highest_food_rating.each do |f| %>
     <% l = find_by_country(f[0]) %>
     
 <%=link_to "#{f[0]} with an overall #{f[1]} rating", location_path(l) %></br>
 <% end %>
+</section>
 </br>
     <%= button_to 'Delete Profile', user_path(@user), :method => "delete" %>
