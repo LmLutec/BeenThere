@@ -38,7 +38,7 @@ module ReviewsHelper
 
    def highest_food_rating
     @food = []
-    @locations.each do |location|
+    Location.all.each do |location|
         if food_rating(location) == "100%" || food_rating(location).between?("90%","99%") 
             @food << ["#{by_location(location)}","#{food_rating(location)}"] 
                 end 

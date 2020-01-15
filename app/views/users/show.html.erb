@@ -1,3 +1,4 @@
+<section id="user">
 <h3><%=@user.first_name%> <%=@user.last_name%>'s reviews</h3>
     <% @user.reviews.each do |review| %>
         <details>
@@ -23,3 +24,4 @@
     <% end %></br></br>
         <%= link_to "Home", home_path %></br>
 
+</section>

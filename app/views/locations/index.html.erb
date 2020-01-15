@@ -1,3 +1,4 @@
+<section id="locations">
 <h2>Browse reviews by location!</h2>
 <% @locations.each do |location| %>
         <%= link_to by_location(location), location_path(location) %> - Review count: <%= location.reviews.count %></br>      
@@ -6,5 +7,5 @@
 
 <%= link_to 'Home', home_path %>
 
-
+</section>
 

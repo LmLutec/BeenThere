@@ -11,6 +11,7 @@
 
     <li><%= link_to 'Edit profile', edit_user_path(@user) %></br></br> </li>
     <li><%= link_to 'Logout', logout_path, method: 'post' %></br></li>
+    
 
 
    </ul>
@@ -31,20 +32,17 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 </section>
 
 <section id="incoming">
-<p>Comments on my reviews</p>
 
 <% incoming_comments.each do |comment| %>
     <% if comment.created_at > 1.week.ago %>
-    <details open>
-    <summary><%= by_location(comment.review.location)%></summary>
-    <b><%="#{@user}"%></b> <%= "said #{comment.content}"%></br>
-    <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
-    <%= link_to 'View comment', location_path(comment.review.location) %>
-    </details>
-    <% else %>
-        <%= "You do not have any new comments" %>
+        <details open>
+            <summary><%= by_location(comment.review.location)%></summary>
+            <b><%="#{@user}"%></b> <%= "said #{comment.content}"%></br>
+            <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
+            <%= link_to 'View comment', location_path(comment.review.location) %>
+        </details></br></br>
     <% end %>
-    <%end%>
+<% end %>
 
 </section>
 <section id="top_food">
@@ -56,4 +54,5 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 <% end %>
 </section>
 </br>
-    <%= button_to 'Delete Profile', user_path(@user), :method => "delete" %>
+   
+<%= button_to 'Delete Profile', user_path(@user), :method => "delete" %>
