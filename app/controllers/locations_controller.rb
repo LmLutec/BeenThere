@@ -33,7 +33,7 @@ class LocationsController < ApplicationController
             end 
           else  
             params[:location][:country] = params[:location][:country].capitalize
-            params[:location][:state] = params[:location][:state].capitalize
+            params[:location][:state] = params[:location][:state].upcase
             params[:location][:city] = params[:location][:city].capitalize
             @location = Location.create(location_params)
            

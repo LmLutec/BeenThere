@@ -5,6 +5,7 @@ class Location < ApplicationRecord
 
 
     validates :city, :state, :country, presence: true
+    validates :state, length: {is: 2}
 
 
   
