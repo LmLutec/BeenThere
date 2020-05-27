@@ -50,7 +50,7 @@ My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime(
 <% highest_food_rating.each do |f| %>
     <% l = find_by_country(f[0]) %>
     
-<%=link_to "#{f[0]} with an overall #{f[1]} rating", location_path(l) %></br>
+<%=link_to "#{f[0]}, rating: #{f[1]}", location_path(l) %></br>
 <% end %>
 </section>
 </br>
