@@ -35,7 +35,7 @@
       <% end %>
     </datalist></br>
 
-    Cities: <%= f.text_field :city, list: "cities_autocomplete" %>
+    City: <%= f.text_field :city, list: "cities_autocomplete" %>
     <datalist id="cities_autocomplete">
       <% Location.all.each do |location| %>
         <option value="<%= location.city %>">

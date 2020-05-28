@@ -5,7 +5,11 @@ module LocationsHelper
 
 
     def by_location(location)
-        "#{location.country}," + " #{location.state}," + " #{location.city}"
+        upcase_country = location.country.split(" ")
+        upcase_country[1] = upcase_country[1].capitalize
+        upcase_country = upcase_country.join(" ")
+        
+        "#{upcase_country}," + " #{location.state}," + " #{location.city}"
     end 
 
     def find_by_country(location)
