@@ -5,11 +5,7 @@ module LocationsHelper
 
 
     def by_location(location)
-        upcase_country = location.country.split(" ")
-        upcase_country[1] = upcase_country[1].capitalize
-        upcase_country = upcase_country.join(" ")
-        
-        "#{upcase_country}," + " #{location.state}," + " #{location.city}"
+        "#{location.country}," + " #{location.state}," + " #{location.city}"
     end 
 
     def find_by_country(location)
@@ -21,15 +17,27 @@ module LocationsHelper
     def location_match(location)
         @locations = Location.all
         @locations.each do |place|
+    
         if location == place 
             @add = place 
         else 
             false
-
         end 
             end 
         @add 
    end 
 
+
+   def capitalize_location(location)
+    breakdwn_location = location.split(" ")
+
+        if breakdwn_location.length == 2
+            breakdwn_location[0] = breakdwn_location[0].capitalize 
+            breakdwn_location[1] = breakdwn_location[1].capitalize
+            location = breakdwn_location.join(" ")
+            return location
+        end 
+
+   end 
 
 end

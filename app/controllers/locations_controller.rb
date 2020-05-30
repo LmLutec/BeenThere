@@ -20,8 +20,8 @@ class LocationsController < ApplicationController
     end 
 
     def create
-        @location= Location.find_by(country: params[:location][:country], state: params[:location][:state], city: params[:location][:city])
-        
+        @location = Location.find_by(country: capitalize_location(params[:location][:country]), state: params[:location][:state].upcase, city: capitalize_location(params[:location][:city]))
+        # location is returning nil
           if location_match(@location)
             params.permit!
             new_review =  Review.new(params[:location][:review])
@@ -32,11 +32,13 @@ class LocationsController < ApplicationController
                 render 'locations/new' 
             end 
           else  
-            params[:location][:country] = params[:location][:country].capitalize
+            params[:location][:country] = capitalize_location(params[:location][:country])
             params[:location][:state] = params[:location][:state].upcase
-            params[:location][:city] = params[:location][:city].capitalize
+            params[:location][:city] = capitalize_location(params[:location][:city])
+
+
             @location = Location.create(location_params)
-           
+        
             if @location.save
                 redirect_to location_path(@location)
             else
