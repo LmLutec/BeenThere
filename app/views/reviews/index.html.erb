@@ -1,7 +1,7 @@
 <section id="reviews">
 <h1>Browse reviews by vacation type!</h1>
 
-<h3>'Business' vacation reviews</h3>
+<h3>Business vacations</h3>
 <% biz_reviews = Review.where(:occasion => "Business") %>
 <% biz_reviews.order(satisfaction: :desc).each do |r| %>
     <details>
@@ -20,7 +20,7 @@
 <% end %>
     
 
-<h3>'Couples' vacation reviews</h3>
+<h3>Couples vacations</h3>
 <% couple_reviews = Review.where(:occasion => "Couples") %>
 <% couple_reviews.order(satisfaction: :desc).each do |r| %>
     <details>
@@ -40,7 +40,7 @@
 
 
 
-<h3>'Family' vacation reviews </h3>
+<h3>Family vacations </h3>
 <% fam_reviews = Review.where(:occasion => "Family") %>
 <% fam_reviews.order(satisfaction: :desc).each do |r| %>
     <details>
@@ -59,7 +59,7 @@
     <% end %>
 
 
-<h3>'Solo Getaway' vacation reviews</h3>
+<h3>Solo Getaways</h3>
 <% solo_reviews = Review.where(:occasion => "Solo getaway") %>
 <% solo_reviews.order(satisfaction: :desc).each do |r| %>
     <details>
@@ -73,7 +73,7 @@
         <%= "Food rating(out of 10): #{r.food_rating}" %></br>
         <%= "Events: #{r.events}" %></br>
         <%= "Cost level: #{r.cost_level}" %></br></br>
-        <%= link_to "See more reviews from this location", location_path(r.location) %>
+        <%= link_to "See more reviews from this location", location_path(r.location) %></br></br>
         </details>
     <% end %></br></br>
 
