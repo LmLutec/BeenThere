@@ -26,7 +26,7 @@ module ReviewsHelper
     end 
 
     def food_rating(location)
-        if location != nil
+        if location.reviews.count > 0
             @reviews = location.reviews 
             a = @reviews.average(:food_rating) / 10 * 100 
             number_to_percentage(a, strip_insignificant_zeros:true)
@@ -41,9 +41,11 @@ module ReviewsHelper
    def highest_food_rating
     @food = []
     Location.all.each do |location|
-        if food_rating(location) == "100%" || food_rating(location).between?("90%","99%") 
-            @food << ["#{by_location(location)}","#{food_rating(location)}"] 
-                end 
+        if location.reviews.count > 0
+            if food_rating(location) == "100%" || food_rating(location).between?("90%","99%") 
+                @food << ["#{by_location(location)}","#{food_rating(location)}"] 
+                    end 
+            end 
         end 
     @food
    end 
