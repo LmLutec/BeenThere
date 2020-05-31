@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
 
     def create
         @location = Location.find_by(country: capitalize_location(params[:location][:country]), state: params[:location][:state].upcase, city: capitalize_location(params[:location][:city]))
-        # location is returning nil
+        
           if location_match(@location)
             params.permit!
             new_review =  Review.new(params[:location][:review])

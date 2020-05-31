@@ -26,9 +26,11 @@ module ReviewsHelper
     end 
 
     def food_rating(location)
-        @reviews = location.reviews 
-        a = @reviews.average(:food_rating) / 10 * 100 
-        number_to_percentage(a, strip_insignificant_zeros:true)
+        if location != nil
+            @reviews = location.reviews 
+            a = @reviews.average(:food_rating) / 10 * 100 
+            number_to_percentage(a, strip_insignificant_zeros:true)
+        end 
     end
 
     def round_cost_level(review)

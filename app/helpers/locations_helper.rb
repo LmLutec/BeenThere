@@ -36,6 +36,9 @@ module LocationsHelper
             breakdwn_location[1] = breakdwn_location[1].capitalize
             location = breakdwn_location.join(" ")
             return location
+        else 
+            location = breakdwn_location.join(" ")
+            return location.capitalize 
         end 
 
    end 
