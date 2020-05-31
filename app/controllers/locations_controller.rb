@@ -58,6 +58,11 @@ class LocationsController < ApplicationController
     def update
         if @user.locations.include?(@location)
             @r = Review.find_by(location_id: @location, user_id: @user)
+           
+            params[:location][:country] = capitalize_location(params[:location][:country])
+            params[:location][:state] = params[:location][:state].upcase
+            params[:location][:city] = capitalize_location(params[:location][:city])
+
             @new = Location.create(location_params)
             
             if @new.save
