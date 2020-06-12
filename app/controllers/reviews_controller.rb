@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
 
     def index
         @reviews = Review.all
+        @business_occasion = Review.business_occasion
     end 
 
     def edit

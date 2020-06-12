@@ -2,22 +2,23 @@
 <h1>Browse reviews by vacation type!</h1>
 
 <h3>Business vacations</h3>
-<% biz_reviews = Review.where(:occasion => "Business") %>
-<% biz_reviews.order(satisfaction: :desc).each do |r| %>
+    <% @business_occasion.each do |r| %>
+
     <details>
-    <summary><%=by_location(r.location)%></summary>
-    <%= "Review created: #{r.created_at.strftime("%b %d, %Y")}" %></br>
-    <%= "Number of full days on vacation: #{r.stay_length}" %></br>
-    <%= "Satisfaction(out of 4): #{r.satisfaction}" %></br>      
-    <%= "Chance of revisit: #{num_to_text(r)}" %></br>   
-    <%= "Suggest to others? : #{r.suggest}" %></br>
-    <%= "Living: #{r.living}" %></br>
-    <%= "Food rating(out of 10): #{r.food_rating}" %></br>
-    <%= "Events: #{r.events}" %></br>
-    <%= "Cost level: #{r.cost_level}" %></br></br>
-    <%= link_to "See more reviews from this location", location_path(r.location) %>
+        <summary><%=by_location(r.location)%></summary>
+        <%= "Review created: #{r.created_at.strftime("%b %d, %Y")}" %></br>
+        <%= "Number of full days on vacation: #{r.stay_length}" %></br>
+        <%= "Satisfaction(out of 4): #{r.satisfaction}" %></br>      
+        <%= "Chance of revisit: #{num_to_text(r)}" %></br>   
+        <%= "Suggest to others? : #{r.suggest}" %></br>
+        <%= "Living: #{r.living}" %></br>
+        <%= "Food rating(out of 10): #{r.food_rating}" %></br>
+        <%= "Events: #{r.events}" %></br>
+        <%= "Cost level: #{r.cost_level}" %></br></br>
+        <%= link_to "See more reviews from this location", location_path(r.location) %>
     </details>
-<% end %>
+    
+    <% end %>
     
 
 <h3>Couples vacations</h3>

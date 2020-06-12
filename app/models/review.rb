@@ -7,7 +7,7 @@ class Review < ApplicationRecord
     
     validates :occasion, :satisfaction, :revisit, :living, :stay_length, :food_rating, :events, :cost_level, :suggest, :additional_info, presence: true
     
-   
+    scope :business_occasion, -> {where(occasion: 'Business' )}
  
 end
 
