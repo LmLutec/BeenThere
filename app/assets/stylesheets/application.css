@@ -14,11 +14,11 @@
  *= require_self
  */
  body {
-    background-color:#99d6ff;
+    /* background-color:#99d6ff; */
 }
 
 a {
-    color: black;
+    color: silver;
     text-decoration: none;
 }
 
@@ -70,7 +70,7 @@ section#user{
 
 ul {
     list-style-type: none;
-    background-color:#a64dff;
+    background-color: #1a1a1a;
     text-align: center;
     margin: 0;
     padding: 0;
