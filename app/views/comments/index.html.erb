@@ -1,4 +1,4 @@
-<%= "#{@user.first_name} #{@user.last_name}'s trip to #{by_location(@location)}"%>
+<h4><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}'s trip to #{by_location(@location)}"%></h4>
     <h3>comment section</h3>
     <div class= "comments">
     <% @comments.each do |comment| %>
@@ -8,7 +8,7 @@
     </div>
        <% if comment.user_id == session[:user_id] %>
         <%= link_to "edit comment", edit_location_review_comment_path(@location, comment.review_id, comment) %></br></br>
-        <%= button_to "delete comment", location_review_comment_path(@location, comment.review_id, comment), :method => "delete" %></br>
+        <%= button_to "delete comment", location_review_comment_path(@location, comment.review_id, comment), :method => "delete", class: 'delete_comment' %></br>
        <% end %></br>
         <% end %> </br></br>
 

@@ -1,5 +1,5 @@
 <section id="show_location">
-<h2><%= by_location(@location) %></h2> </br></br>
+<h1><%= by_location(@location) %></h1> </br></br>
 <section id= "ratings">
 <b>Satisfaction rating:</b> <%= avg_satisfied(@location) %>
 <b>Chance of revisit:</b> <%= avg_revisit(@location) %>
@@ -12,7 +12,7 @@
         <details>
           <summary> <%= "Occasion: #{review.occasion}" %></summary></br>
                     <%= "Review created: #{review.created_at.strftime("%b %d, %Y")}" %></br>
-                    created by: <%= link_to "#{review.user.first_name} #{review.user.last_name}", user_path(review.user) %></br>
+                    created by: <%= link_to "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize}", user_path(review.user) %></br>
                     <%= "Number of full days on vacation: #{review.stay_length}" %></br>
                     <%= "Satisfaction(out of 4): #{review.satisfaction}" %></br>      
                     <%= "Chance of revisit: #{num_to_text(review)}" %></br>   

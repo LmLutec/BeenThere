@@ -23,11 +23,11 @@
 <% if @user.reviews.length != 0 %>
     <% @user.reviews.each do |review| %>
         <% location = review.location %> 
-    My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </br>
+    <h5>My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </h5></br>
             <%= link_to 'Edit location', edit_location_path(location) %></br>
-            <%= link_to "Edit my review", edit_review_path(review) %></br>
+            <%= link_to "Edit my review", edit_review_path(review) %></br></br>
        
-            <%= button_to "Delete my review", review, :method => "delete" %>
+            <%= button_to "Delete my review", review, :method => "delete", class: 'delete_review'%>
     <% end %>
 <% else %>
         <h4><i>Add a review!</i></h4>
@@ -70,4 +70,4 @@
 </section>
 </br>
    
-<%= button_to 'Delete Profile', user_path(@user), :method => "delete" %>
+<%= button_to 'Delete Profile', user_path(@user), :method => "delete", class: 'delete_profile' %>

@@ -32,12 +32,6 @@ a:hover {
     border-bottom: 2px solid red;
 }
 
-/* header {
-    border: 2px solid slateblue;
-    background-color: slategray;
-} */
-
-
 div#error_explanation {
     display: inline-block;
 }
@@ -82,10 +76,21 @@ section#user{
     text-align: center;
 }
 
+section#ratings {
+    color: red;
+}
+
+summary {
+    color: slateblue;
+}
+
+details {
+    color: darkgreen;
+    font-weight: bold;
+}
 
 ul {
     list-style-type: none;
-    /* background-color: #1a1a1a; */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -94,21 +99,58 @@ ul {
 li {
     float: left;
     padding: 40px;
-    /* width: 160px; */
-    /* position: fixed; */
-}
-
-form.button_to {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 300px;
-    color: red;
 }
 
 form.new_location {
     color: red;
     text-align: center;
+}
+
+form.new_user {
+    text-align: left;
+}
+
+form.edit_user {
+    color: red;
+}
+
+form.edit_location {
+    color: red;
+    text-align: center;
+}
+
+form { 
+    color: red;
+    text-align: center;
+}
+
+input {
+    color: slateblue;
+}
+
+input.delete_profile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    color: red;
+    font-weight: bold;
+}
+
+input.delete_comment {
+    float: left;
+}
+
+textarea#review_additional_info {
+    color: slateblue;
+}
+
+textarea#location_review_additional_info {
+    color: slateblue;
+}
+
+h1 {
+    color: slateblue;
 }
 
 h3 {
@@ -118,4 +160,8 @@ h3 {
 h4 {
     color: slateblue;
     text-align: center;
+}
+
+div.comments {
+    color: darkgreen;
 }

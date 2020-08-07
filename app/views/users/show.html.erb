@@ -1,5 +1,5 @@
 <section id="user">
-<h3><%=@user.first_name%> <%=@user.last_name%>'s reviews</h3>
+<h3><%=@user.first_name.capitalize%> <%=@user.last_name.capitalize%>'s reviews</h3>
     <% @user.reviews.each do |review| %>
         <details>
             <summary>Trip to: <%= by_location(review.location) %></summary>
