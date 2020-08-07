@@ -106,7 +106,16 @@ form.button_to {
     color: red;
 }
 
+form.new_location {
+    color: red;
+    text-align: center;
+}
+
 h3 {
     color: #d64161
 }
 
+h4 {
+    color: slateblue;
+    text-align: center;
+}
