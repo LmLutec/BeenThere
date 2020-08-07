@@ -1,4 +1,4 @@
-    <h3>Welcome back, <%= @user.first_name %></h3>
+   <header><h3>Welcome back, <%= @user.first_name.capitalize %></h3></header>
    <ul>
 
     <li><%= link_to 'Add vacation', new_location_path %></br> </li>
@@ -19,39 +19,53 @@
 
 
 <section id="user_reviews">
-<% @user.reviews.each do |review| %>
-    <% location = review.location %> 
-My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </br>
-        <%= link_to 'Edit location', edit_location_path(location) %></br>
-        <%= link_to "Edit my review", edit_review_path(review) %></br>
+<h3><%= @user.first_name.capitalize %>'s reviews</h3>
+<% if @user.reviews.length != 0 %>
+    <% @user.reviews.each do |review| %>
+        <% location = review.location %> 
+    My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </br>
+            <%= link_to 'Edit location', edit_location_path(location) %></br>
+            <%= link_to "Edit my review", edit_review_path(review) %></br>
        
-        <%= button_to "Delete my review", review, :method => "delete" %>
-        
-</br>
+            <%= button_to "Delete my review", review, :method => "delete" %>
+    <% end %>
+<% else %>
+        <h4><i>Add a review!</i></h4>
 <% end %>
+
+</br>
 </section>
 
 <section id="incoming">
-<% page_user = @user %> 
-<% incoming_comments.each do |comment| %>
-    <% if comment.user.email != page_user.email %>
-        <% if comment.created_at > 1.week.ago %>  
-            <details open>
-                <summary><%= by_location(comment.review.location)%></summary>
-                <b><%="#{comment.user.first_name} #{comment.user.last_name} said"%></b> </br><%= "#{comment.content}"%></br>
-                <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
-                <%= link_to 'View comment', location_path(comment.review.location) %>
-            </details></br></br>
+<h3>Comments section</h3>
+<% if incoming_comments.length != 0 %>
+    <% page_user = @user %> 
+    <% incoming_comments.each do |comment| %>
+        <% if comment.user.email != page_user.email %>
+            <% if comment.created_at > 1.week.ago %>  
+                <details open>
+                    <summary><%= by_location(comment.review.location)%></summary>
+                    <b><%="#{comment.user.first_name} #{comment.user.last_name} said"%></b> </br><%= "#{comment.content}"%></br>
+                    <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
+                    <%= link_to 'View comment', location_path(comment.review.location) %>
+                </details></br></br>
+            <% end %>
         <% end %>
     <% end %>
+<% else %>
+    <h4><i>No comments yet! Check back soon!</i></h4>
 <% end %>
 
 </section>
 <section id="top_food">
-<p>Vacation spots with top rated food!</p>
-<% highest_food_rating.each do |f| %>
-    <% l = find_by_country(f[0]) %>
-<%=link_to "#{f[0]}, rating: #{f[1]}", location_path(l) %></br>
+<h3>Vacation spots with top rated food!</h3>
+<% if @reviews.length != 0 %>
+    <% highest_food_rating.each do |f| %>
+        <% l = find_by_country(f[0]) %>
+    <%=link_to "#{f[0]}, rating: #{f[1]}", location_path(l) %></br>
+    <% end %>
+<% else %>
+    <h4><i>Sorry! No reviews just yet!</i></h4>    
 <% end %>
 </section>
 </br>

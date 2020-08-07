@@ -18,10 +18,24 @@
     /* background-color:#99d6ff; */
 /* } */
 
-a {
-    color: silver;
-    text-decoration: none;
+body {
+    background-color: #ccddff;
 }
+
+a {
+    color: slateblue;
+    text-decoration: none;
+    display: inline;
+}
+
+a:hover {
+    border-bottom: 2px solid red;
+}
+
+/* header {
+    border: 2px solid slateblue;
+    background-color: slategray;
+} */
 
 
 div#error_explanation {
@@ -29,8 +43,9 @@ div#error_explanation {
 }
 
 section#user_reviews {
-    display: inline-block;
-
+    position: absolute;
+    top: 185px;
+    right: 1250px;
 }
 
 section#incoming {
@@ -38,8 +53,8 @@ section#incoming {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 250px;
-    right: 580px;
+    top: 190px;
+    right: 650px;
 }   
 
 section#top_food {
@@ -70,10 +85,28 @@ section#user{
 
 ul {
     list-style-type: none;
-    background-color: #1a1a1a;
+    /* background-color: #1a1a1a; */
     text-align: center;
     margin: 0;
     padding: 0;
+    border-radius: 10px;
   }
+li {
+    float: left;
+    padding: 40px;
+    /* width: 160px; */
+    /* position: fixed; */
+}
 
+form.button_to {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    color: red;
+}
+
+h3 {
+    color: #d64161
+}
 
