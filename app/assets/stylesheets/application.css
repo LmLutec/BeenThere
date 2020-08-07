@@ -13,9 +13,10 @@
  *= require_tree .
  *= require_self
  */
- body {
+ /* body { */
+    /* text-align: center; */
     /* background-color:#99d6ff; */
-}
+/* } */
 
 a {
     color: silver;
@@ -29,8 +30,7 @@ div#error_explanation {
 
 section#user_reviews {
     display: inline-block;
-    text-align: center;
-    float: center;
+
 }
 
 section#incoming {
