@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_07_30_235104) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -45,24 +45,24 @@ ActiveRecord::Schema.define(version: 2020_07_30_235104) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string "city"
-    t.string "state"
-    t.string "country"
+    t.text "city"
+    t.text "state"
+    t.text "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "occasion"
-    t.string "satisfaction"
-    t.string "revisit"
-    t.string "suggest"
-    t.string "living"
-    t.string "stay_length"
+    t.text "occasion"
+    t.text "satisfaction"
+    t.text "revisit"
+    t.text "suggest"
+    t.text "living"
+    t.text "stay_length"
     t.integer "food_rating"
-    t.string "events"
-    t.string "additional_info"
-    t.string "cost_level"
+    t.text "events"
+    t.text "additional_info"
+    t.text "cost_level"
     t.integer "user_id"
     t.integer "location_id"
     t.datetime "created_at", precision: 6, null: false
@@ -70,12 +70,12 @@ ActiveRecord::Schema.define(version: 2020_07_30_235104) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "age", default: 18
-    t.string "email"
-    t.string "password_digest"
-    t.string "uid"
+    t.text "first_name"
+    t.text "last_name"
+    t.text "age", default: "18"
+    t.text "email"
+    t.text "password_digest"
+    t.text "uid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
