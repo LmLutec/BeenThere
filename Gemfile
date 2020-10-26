@@ -36,7 +36,6 @@ gem "actionpack", ">= 6.0.3.2"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry', '~> 0.12.2'
   gem 'thin', '~> 1.7', '>= 1.7.2'
 end
 
