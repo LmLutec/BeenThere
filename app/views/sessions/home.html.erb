@@ -59,7 +59,7 @@
 </section>
 <section id="top_food">
 <h3>Vacation spots with top rated food!</h3>
-<% if @reviews.length != 0 %>
+<% if @reviews %>
     <% highest_food_rating.each do |f| %>
         <% l = find_by_country(f[0]) %>
     <%=link_to "#{f[0]}, rating: #{f[1]}", location_path(l) %></br>
