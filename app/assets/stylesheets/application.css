@@ -119,6 +119,10 @@ form#new_user {
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
 }
 
+form#new_user input placeholder {
+    color: slateblue;
+}
+
 form.edit_user {
     color: red;
 }
