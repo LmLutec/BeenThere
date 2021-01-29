@@ -131,7 +131,7 @@ form {
 
 input {
     color: slateblue;
-    padding: 20px;
+    margin: 20px;
 }
 
 input.delete_profile {
