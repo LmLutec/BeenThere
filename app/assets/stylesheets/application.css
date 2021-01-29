@@ -107,7 +107,8 @@ form.new_location {
 }
 
 form.new_user {
-    text-align: left;
+    text-align: center;
+    padding: 10px;
 }
 
 form#new_user {
