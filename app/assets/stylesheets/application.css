@@ -110,6 +110,10 @@ form.new_user {
     text-align: left;
 }
 
+form#new_user {
+    border: 1rem solid;
+}
+
 form.edit_user {
     color: red;
 }
