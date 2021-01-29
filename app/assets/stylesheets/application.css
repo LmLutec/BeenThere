@@ -138,6 +138,7 @@ input {
     color: slateblue;
     margin: 10px;
     border-radius: 20px;
+    text-align: center;
 }
 
 input.delete_profile {
