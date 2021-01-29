@@ -111,7 +111,7 @@ form.new_user {
 }
 
 form#new_user {
-    box-shadow: 5px 10px #888888;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
 }
 
 form.edit_user {
