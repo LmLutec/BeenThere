@@ -111,7 +111,7 @@ form.new_user {
     padding: 20px;
 }
 
-form#new_user input {
+form#new_user {
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
 }
 
@@ -131,7 +131,7 @@ form {
 
 input {
     color: slateblue;
-    margin: 20px;
+    margin: 10px;
 }
 
 input.delete_profile {

@@ -1,5 +1,5 @@
 
-<h1>New User Registration</h1></br>
+
 
     <% if @user.errors.any? %>
         <div id="error_explanation">
@@ -16,6 +16,7 @@
     <% end %></br></br>
 
 <%= form_for @user do |f| %>
+    <h1>New User Registration</h1></br>
     First name: <%= f.text_field :first_name %></br>
     Last name: <%= f.text_field :last_name %></br>
     Age: <%= f.text_field :age %></br>
