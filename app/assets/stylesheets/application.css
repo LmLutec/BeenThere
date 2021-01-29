@@ -111,7 +111,7 @@ form.new_user {
     padding: 20px;
 }
 
-form#new_user {
+form#new_user input {
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
 }
 
