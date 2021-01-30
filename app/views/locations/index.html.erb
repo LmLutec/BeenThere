@@ -3,6 +3,7 @@
 
 <% if @locations.length != 0 %>
     <% @locations.each do |location| %>
+        console.log(location)
             <%= link_to by_location(location), location_path(location) %> - Review count: <%= location.reviews.count %></br>      
         <% end %></br></br>
 <% else %>
