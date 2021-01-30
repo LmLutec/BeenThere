@@ -201,6 +201,10 @@ div.comments {
     color: darkgreen;
 }
 
+div#vacations_occasions {
+    flex-direction: row;
+}
+
 div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_vacations {
-    display: block;
+    display: inline-block;
 }
