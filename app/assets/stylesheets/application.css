@@ -109,6 +109,12 @@ div#new_user {
     text-align: center;
 }
 
+div#google_login {
+    position: absolute;
+    left: 350px;
+    bottom: 150px;
+}
+
 form.new_location {
     color: red;
     text-align: center;
