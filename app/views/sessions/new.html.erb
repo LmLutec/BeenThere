@@ -1,7 +1,7 @@
 <%= form_for @user, url: login_path do |f| %>
     <h1>Log In</h1>
-    Email: <%= f.text_field :email %>
-    Password: <%= f.password_field :password %>
+    <%= f.text_field :email, placeholder: "Email" %>
+    <%= f.password_field :password, placeholder: "Password" %>
     <%= f.submit "Log In" %>
 <% end %>
 </br>
@@ -11,5 +11,6 @@
 </div>
 
 <div id="new_user">
-    <h3>New User?</h3> <%= link_to 'Create new account', root_path %>
+    <h3>New User?</h3> 
+    <%= link_to 'Create new account', root_path %>
 </div>
