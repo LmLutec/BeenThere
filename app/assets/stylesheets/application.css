@@ -113,6 +113,7 @@ form.new_location {
 form.new_user {
     text-align: center;
     padding: 20px;
+    width: 50%;
 }
 
 form#new_user {
