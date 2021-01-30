@@ -105,6 +105,10 @@ div#returning_users {
     text-align: center;
 }
 
+div#new_user {
+    text-align: center;
+}
+
 form.new_location {
     color: red;
     text-align: center;
