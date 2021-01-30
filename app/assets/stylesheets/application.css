@@ -115,6 +115,8 @@ form.new_user {
     padding: 20px;
     width: 50%;
     position: absolute;
+    left: 100px;
+    top: 150px;
 }
 
 form#new_user {
