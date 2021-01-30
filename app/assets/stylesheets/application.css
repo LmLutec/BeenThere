@@ -200,3 +200,7 @@ h4 {
 div.comments {
     color: darkgreen;
 }
+
+div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_vacations {
+    display: block;
+}
