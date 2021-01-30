@@ -14,13 +14,15 @@
 
 
 <%= form_for @user do |f| %>
-    First name: <%= f.text_field :first_name %>
-    Last name: <%= f.text_field :last_name %>
-    Age: <%= f.text_field :age %>
-    Email: <%= f.text_field :email %>
-    Password: <%= f.text_field :password %>
-    <%= f.submit "Edit user account" %>
+    First name: <%= f.text_field :first_name %></br>
+    Last name: <%= f.text_field :last_name %></br>
+    Age: <%= f.text_field :age %></br>
+    Email: <%= f.text_field :email %></br>
+    Password: <%= f.text_field :password %></br>
+    <%= f.submit "Edit user account" %></br>
 
 <% end %></br></br>
 
-<%= link_to 'Home', home_path %>
+<div id="home_button">
+    <%= link_to 'Home', home_path %>
+</div>

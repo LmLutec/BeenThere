@@ -115,6 +115,10 @@ div#google_login {
     top: 320px;
 }
 
+div#home_button {
+    text-align: center;
+}
+
 form.new_location {
     color: red;
     text-align: center;
