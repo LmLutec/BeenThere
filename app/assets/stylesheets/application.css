@@ -112,7 +112,7 @@ div#new_user {
 div#google_login {
     position: absolute;
     right: 450px;
-    top: 200px;
+    top: 400px;
 }
 
 form.new_location {
