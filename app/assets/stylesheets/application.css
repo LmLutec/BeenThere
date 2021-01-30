@@ -114,6 +114,7 @@ form.new_user {
     text-align: center;
     padding: 20px;
     width: 50%;
+    position: absolute;
 }
 
 form#new_user {
