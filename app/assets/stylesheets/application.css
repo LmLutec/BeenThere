@@ -110,7 +110,7 @@ div#new_user {
 }
 
 div#google_login {
-    position: relative;
+    position: absolute;
     right: 450px;
     top: 200px;
 }
