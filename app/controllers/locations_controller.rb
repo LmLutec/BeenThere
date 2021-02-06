@@ -10,7 +10,6 @@ class LocationsController < ApplicationController
     before_action :set_user, only: [:new, :create, :update]
     
 
-
     def index
         @locations = Location.all 
     end 
