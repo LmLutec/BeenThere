@@ -14,9 +14,9 @@ module ReviewsHelper
     end 
 
     def num_to_text(review)
-        if review.revisit == "2" 
+        if review.revisit == 2 
             new_rev = "Absolutely" 
-        elsif review.revisit == "1"
+        elsif review.revisit == 1
             new_rev = "Maybe"
         else
             new_rev = "No"
