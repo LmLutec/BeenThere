@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2020_07_30_235104) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "occasion"
-    t.integer "satisfaction"
-    t.integer "revisit"
+    t.float "satisfaction"
+    t.float "revisit"
     t.text "suggest"
     t.text "living"
     t.text "stay_length"

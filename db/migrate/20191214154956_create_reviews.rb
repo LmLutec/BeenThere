@@ -2,8 +2,8 @@ class CreateReviews < ActiveRecord::Migration[6.0]
   def change
     create_table :reviews do |t|
       t.text :occasion
-      t.integer :satisfaction
-      t.integer :revisit
+      t.float :satisfaction
+      t.float :revisit
       t.text :suggest
       t.text :living
       t.text :stay_length
