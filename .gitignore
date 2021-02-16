@@ -12,8 +12,6 @@
 /db/*.sqlite3-journal
 /db/*.sqlite3-*
 
-# production
-/build
 
 # Ignore all logfiles and tempfiles.
 /log/*
