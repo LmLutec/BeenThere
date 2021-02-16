@@ -3,8 +3,8 @@ module ReviewsHelper
 
     def avg_satisfied(location)
         @reviews = location.reviews 
-        a = @reviews.sum(:satisfaction) / @reviews.size
-        # a = @reviews.average(:satisfaction) / 4 * 100
+        # a = @reviews.sum(:satisfaction) / @reviews.size
+        a = @reviews.average(:satisfaction) / 4 * 100
         # byebug
         number_to_percentage(a, strip_insignificant_zeros:true)     
     end 

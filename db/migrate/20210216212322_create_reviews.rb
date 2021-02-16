@@ -16,5 +16,8 @@ class CreateReviews < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    change_column :reviews, :satisfaction, 'integer USING CAST(satisfaction AS integer)'
+
   end
+
 end
