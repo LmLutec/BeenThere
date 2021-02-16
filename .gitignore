@@ -12,6 +12,9 @@
 /db/*.sqlite3-journal
 /db/*.sqlite3-*
 
+# production
+/build
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -27,3 +30,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Local Netlify folder
+.netlify
