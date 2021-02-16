@@ -52,23 +52,6 @@ ActiveRecord::Schema.define(version: 2020_07_30_235104) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.text "occasion"
-    t.float "satisfaction"
-    t.float "revisit"
-    t.text "suggest"
-    t.text "living"
-    t.text "stay_length"
-    t.integer "food_rating"
-    t.text "events"
-    t.text "additional_info"
-    t.text "cost_level"
-    t.integer "user_id"
-    t.integer "location_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.text "first_name"
     t.text "last_name"
