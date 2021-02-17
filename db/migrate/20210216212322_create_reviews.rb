@@ -2,8 +2,8 @@ class CreateReviews < ActiveRecord::Migration[6.0]
   def change
     create_table :reviews do |t|
       t.text :occasion
-      t.float :satisfaction
-      t.float :revisit
+      t.integer :satisfaction
+      t.integer :revisit
       t.text :suggest
       t.text :living
       t.text :stay_length
@@ -16,8 +16,6 @@ class CreateReviews < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    change_column :reviews, :satisfaction, 'integer USING CAST(satisfaction AS integer)'
-    # change_column :table_name, :column, 'integer USING CAST(column AS integer)'
   end
 
 end
