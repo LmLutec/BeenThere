@@ -139,18 +139,12 @@ form#new_user {
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
 }
 
-
-form.edit_user {
-    color: red;
-}
-
 form.edit_location {
-    color: red;
     text-align: center;
 }
 
 form { 
-    color: red;
+    color: #236AB9;
     text-align: center;
 }
 
