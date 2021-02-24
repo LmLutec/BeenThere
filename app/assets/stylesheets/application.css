@@ -146,6 +146,10 @@ form.edit_location {
     text-align: center;
 }
 
+form.edit_user{
+    text-align: center;
+}
+
 form { 
     color: #236AB9;
     text-align: center;
