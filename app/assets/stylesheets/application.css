@@ -89,6 +89,10 @@ details {
     font-weight: bold;
 }
 
+div.form-review{
+    border: 2px solid #559E54;
+}
+
 ul {
     list-style-type: none;
     text-align: center;
