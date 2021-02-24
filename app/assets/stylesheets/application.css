@@ -19,7 +19,7 @@
 /* } */
 
 body {
-    background-color: white;
+    background-color: #236AB9;
 }
 
 a {
@@ -131,7 +131,7 @@ form.new_user {
     position: absolute;
     left: 350px;
     top: 150px;
-    background-color: #ccddff;
+    background-color: #D4F7D4;
 }
 
 form#new_user {
