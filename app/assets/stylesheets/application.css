@@ -85,7 +85,8 @@ summary {
 }
 
 details {
-    color: darkgreen;
+    background-color: #091034;
+    color: #559E54;
     font-weight: bold;
 }
 
