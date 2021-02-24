@@ -23,7 +23,7 @@ body {
 }
 
 a {
-    color: slateblue;
+    color: #D4F7D4;
     text-decoration: none;
     display: inline;
 }
@@ -190,7 +190,7 @@ h1 {
 }
 
 h3 {
-    color: #D4F7D4
+    color: #D4F7D4;
 }
 
 h4 {
