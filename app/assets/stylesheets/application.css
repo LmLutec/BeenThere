@@ -85,7 +85,6 @@ summary {
 }
 
 details {
-    background-color: #091034;
     color: #559E54;
     font-weight: bold;
 }
@@ -121,7 +120,7 @@ div#home_button {
 }
 
 form.new_location {
-    color: red;
+    color: #236AB9;
     text-align: center;
 }
 
