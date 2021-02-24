@@ -44,6 +44,7 @@
 
 
     <h4>Location reviews</h4>
+    <div class="review-form">
     <%= f.fields_for :review do |reviews_attributes| %>
         <%= reviews_attributes.hidden_field :user_id, :value => @user.id %>
     
@@ -98,6 +99,7 @@
         
     <% end %>
     <%= f.submit "Submit review" %>
+  </div>
   <% end %></br></br>
 <%= link_to 'Return home', home_path %>
 
