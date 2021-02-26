@@ -216,3 +216,12 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     display: inline-block;
     padding: 30px;
 }
+
+.flex-container > section {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
