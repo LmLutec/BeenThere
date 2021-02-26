@@ -3,7 +3,7 @@
 
 <div id="vacation_occasions">
 <div id="business_vacations">
-    <div class="flex-container">
+    
     <h3>Business vacations</h3>
     <% if @business_occasion.length != 0 %>
         <% @business_occasion.each do |r| %>
@@ -105,7 +105,7 @@
     <% end %>
 </div>
 </div>
-</div>
+
     <%= link_to 'Browse by location', locations_path %></br></br>
 
     <%= link_to 'Home', home_path %>

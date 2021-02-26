@@ -17,7 +17,7 @@
    </ul>
 </br>
 
-<div class="flex-container">
+
     <section id="user_reviews">
     <h3><%= @user.first_name.capitalize %>'s reviews</h3>
     <% if @user.reviews.length != 0 %>
@@ -68,7 +68,7 @@
         <h4><i>Sorry! No reviews just yet!</i></h4>    
     <% end %>
     </section>
-    </div>
+   
     <div id="delete_profile">   
         <%= button_to 'Delete Profile', user_path(@user), :method => "delete", class: 'delete_profile' %>
 </div>
