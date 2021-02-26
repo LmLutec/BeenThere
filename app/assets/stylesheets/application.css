@@ -56,7 +56,7 @@ section#user_reviews {
 
 section#incoming {
     text-align: center;
-    margin: 10px;
+    margin: 20px;
     padding: 0;
     position: absolute;
     top: 190px;
@@ -69,7 +69,7 @@ section#incoming {
 
 section#top_food {
     text-align: center;
-    margin: 10px;
+    margin: 20px;
     padding: 10px;
     position: absolute;
     top: 190px;
