@@ -1,13 +1,13 @@
    <header><h3>Welcome back, <%= @user.first_name.capitalize %></h3></header>
-   <ul>
+   <ul class="nav">
 
-    <li><%= link_to 'Add vacation', new_location_path %></br> </li>
+    <li class="navlink"><%= link_to 'Add vacation', new_location_path %></br> </li>
 
-    <li><%= link_to 'View reviews by occasion', reviews_path %></br> </li>
+    <li class="navlink"><%= link_to 'View reviews by occasion', reviews_path %></br> </li>
 
-    <li><%= link_to 'View reviews by location', locations_path %></br> </li>
+    <li class="navlink"><%= link_to 'View reviews by location', locations_path %></br> </li>
 
-    <li><%= link_to "View all of my reviews", user_path(@user) %></br></br></li>
+    <li class="navlink"><%= link_to "View all of my reviews", user_path(@user) %></br></br></li>
 
     <li><%= link_to 'Edit profile', edit_user_path(@user) %></br></br> </li>
     <li><%= link_to 'Logout', logout_path, method: 'post' %></br></li>

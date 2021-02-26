@@ -237,3 +237,6 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     padding: 30px;
 }
 
+li.navlink{
+    margin: 30px;
+}
