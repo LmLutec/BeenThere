@@ -219,7 +219,7 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
 
 .flex-container {
     display: flex;
-    justify-content: center;
+    align-content: space-around;
     /* background-color: DodgerBlue; */
   }
 
