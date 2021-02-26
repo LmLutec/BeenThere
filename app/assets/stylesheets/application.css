@@ -54,7 +54,7 @@ section#incoming {
 section#top_food {
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     position: absolute;
     top: 200px;
     right: 40px;
