@@ -39,8 +39,8 @@ div#error_explanation {
 div.occasions {
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
-    display: inline-block;
-    padding: 10px;
+    /* display: inline;
+    padding: 10px; */
 }
 
 section#user_reviews {
@@ -122,7 +122,7 @@ ul {
   }
 li {
     float: left;
-    /* padding: 40px; */
+    padding: 40px;
 }
 
 div#returning_users {
@@ -237,6 +237,6 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     padding: 30px;
 }
 
-li.navlink{
+/* li.navlink{
     margin: 30px;
-}
+} */
