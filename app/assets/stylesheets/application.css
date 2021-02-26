@@ -47,6 +47,7 @@ section#user_reviews {
     right: 1250px;
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
+    background-color: white;
 }
 
 section#incoming {
@@ -58,6 +59,7 @@ section#incoming {
     right: 650px;
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
+    background-color: white;
 }   
 
 section#top_food {
@@ -69,6 +71,7 @@ section#top_food {
     right: 40px;
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
+    background-color: white;
 }
 
 section#reviews {
