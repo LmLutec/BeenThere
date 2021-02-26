@@ -220,12 +220,12 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-    background-color: DodgerBlue;
+    /* background-color: DodgerBlue; */
   }
 
 .flex-container > section {
     /* background-color: #f1f1f1; */
-    width: 100px;
+    width: 200px;
     margin: 10px;
     text-align: center;
     line-height: 20px;
