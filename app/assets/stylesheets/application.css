@@ -233,7 +233,7 @@ div#delete_profile {
 }
 
 div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_vacations {
-    display: inline-block;
+    display: inline;
     padding: 30px;
 }
 
