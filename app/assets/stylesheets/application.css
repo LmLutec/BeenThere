@@ -52,12 +52,13 @@ section#user_reviews {
     background-color: white;
     color: #559E54;
     margin: 20px;
+    padding: 10px;
 }
 
 section#incoming {
     text-align: center;
     margin: 20px;
-    padding: 0;
+    padding: 10px;
     position: absolute;
     top: 190px;
     right: 650px;
@@ -189,7 +190,7 @@ input {
 input.delete_profile {
     position: fixed;
     bottom: 0;
-    left: 450px;
+    left: 500px;
     width: 200px;
     color: red;
     font-weight: bold;
