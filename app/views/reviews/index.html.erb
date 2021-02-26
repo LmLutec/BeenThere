@@ -2,7 +2,7 @@
 <h1>Browse reviews by vacation type!</h1>
 
 <div id="vacation_occasions">
-<div id="business_vacations">
+<div id="business_vacations" class="occasions">
     
     <h3>Business vacations</h3>
     <% if @business_occasion.length != 0 %>
@@ -29,7 +29,7 @@
     <% end %>
 </div>
 
-<div id="couples_vacations">
+<div id="couples_vacations" class="occasions">
     <h3>Couples vacations</h3>
     <% couple_reviews = Review.where(:occasion => "Couples") %>
 
@@ -54,7 +54,7 @@
     <% end %>
 </div>
 
-<div id="family_vacations">
+<div id="family_vacations" class="occasions">
     <h3>Family vacations </h3>
     <% fam_reviews = Review.where(:occasion => "Family") %>
 
@@ -79,7 +79,7 @@
     <% end %>
 </div>
 
-<div id="solo_vacations">
+<div id="solo_vacations" class="occasions">
 
     <h3>Solo Getaways</h3>
     <% solo_reviews = Review.where(:occasion => "Solo getaway") %>
