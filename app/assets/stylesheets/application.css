@@ -40,6 +40,7 @@ div.occasions {
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
     display: inline-block;
+    padding: 10px;
 }
 
 section#user_reviews {
