@@ -44,40 +44,40 @@ div#error_explanation {
 /* } */
 
 section#user_reviews {
-    position: absolute;
-    top: 190px;
-    right: 1250px;
+    /* position: absolute; */
+    /* top: 190px;
+    right: 1250px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
-    background-color: white;
+    /* background-color: white; */
     color: #559E54;
-    margin: 20px;
-    padding: 10px;
+    /* margin: 20px;
+    padding: 10px; */
 }
 
 section#incoming {
-    text-align: center;
-    margin: 20px;
+    /* text-align: center; */
+    /* margin: 20px;
     padding: 10px;
-    position: absolute;
-    top: 190px;
-    right: 650px;
+    position: absolute; */
+    /* top: 190px;
+    right: 650px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
-    background-color: white;
+    /* background-color: white; */
     color: #559E54;
 }   
 
 section#top_food {
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-    position: absolute;
-    top: 190px;
-    right: 40px;
+    /* text-align: center; */
+    /* margin: 20px;
+    padding: 10px; */
+    /* position: absolute; */
+    /* top: 190px;
+    right: 40px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
-    background-color: white;
+    /* background-color: white; */
     color: #559E54;
 }
 
@@ -143,6 +143,22 @@ div#google_login {
 div#home_button {
     text-align: center;
 }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    background-color: DodgerBlue;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+  }
+
 
 form.new_location {
     color: white;
