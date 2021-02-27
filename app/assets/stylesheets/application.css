@@ -146,7 +146,7 @@ div#home_button {
 
 .flex-container {
     display: flex;
-    flex-flow: wrap column;
+    justify-content: space-around;
   }
   
   .flex-container > section {
