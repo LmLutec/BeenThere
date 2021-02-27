@@ -27,7 +27,7 @@
                 <%= link_to 'Edit location', edit_location_path(location) %></br>
                 <%= link_to "Edit my review", edit_review_path(review) %></br></br>
         
-                <%= button_to "Delete trip review, review, :method => "delete", class: 'delete_review'%>
+                <%= button_to "Delete my trip", review, :method => "delete", class: 'delete_review'%>
         <% end %>
     <% else %>
             <h4><i>Add a review!</i></h4>
