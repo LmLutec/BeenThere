@@ -146,7 +146,7 @@ div#home_button {
 
 .flex-container {
     display: flex;
-    flex-direction: row;
+    flex-flow: nowrap row;
   }
   
   .flex-container > section {
