@@ -44,7 +44,7 @@ div#error_explanation {
 /* } */
 
 section#user_reviews {
-    position: absolute;
+    /* position: absolute; */
     /* top: 190px;
     right: 1250px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
@@ -61,7 +61,7 @@ section#incoming {
     padding: 10px;
     /* top: 190px;
     right: 650px; */
-    position: absolute; 
+    /* position: absolute;  */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
     /* background-color: white; */
@@ -72,7 +72,7 @@ section#top_food {
     /* text-align: center; */
     /* margin: 20px;
     padding: 10px; */
-    position: absolute;
+    /* position: absolute; */
     /* top: 190px;
     right: 40px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
