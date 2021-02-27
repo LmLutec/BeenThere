@@ -190,7 +190,7 @@ input {
 input.delete_profile {
     position: fixed;
     bottom: 0;
-    left: 550px;
+    left: 600px;
     width: 200px;
     color: red;
     font-weight: bold;
