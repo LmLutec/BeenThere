@@ -146,8 +146,9 @@ div#home_button {
 
 .flex-container {
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    /* flex-direction: row-reverse;
+    flex-wrap: wrap; */
     /* justify-content: space-around;
     align-items: center; */
   }
