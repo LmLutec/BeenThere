@@ -144,25 +144,21 @@ div#home_button {
     text-align: center;
 }
 
-/* .flex-container {
-    display: flex; */
-    /* flex-direction: row-reverse;
-    flex-wrap: wrap; */
-    /* justify-content: space-around;
-    align-items: center; */
-  /* } */
-/*   
+.flex-container {
+    display: flex; 
+}
+ 
   .flex-container > section {
     background-color: #f1f1f1;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+
+    align-content: space-between;
+    
     width: 300px;
     margin: 10px;
     text-align: center;
     line-height: 50px;
     font-size: 16px;
-  } */
+  }
 
 
 form.new_location {
