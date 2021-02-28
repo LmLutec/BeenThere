@@ -151,7 +151,7 @@ div#home_button {
   .flex-container > section {
     background-color: #f1f1f1;
 
-    align-content: space-between;
+    align-content: space-around;
     
     width: 300px;
     margin: 10px;
