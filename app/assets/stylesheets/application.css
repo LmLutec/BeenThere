@@ -17,9 +17,8 @@
     /* text-align: center; */
     /* background-color:#99d6ff; */
 /* } */
-
-body {
-    background-color: #236AB9;
+::placeholder{
+    color: slateblue;
 }
 
 a {
@@ -32,77 +31,8 @@ a:hover {
     border-bottom: 2px solid #559E54;
 }
 
-div#error_explanation {
-    display: inline-block;
-}
-
-/* div.occasions {
-    border: 2px solid rgba(37, 21, 95, 0.452);
-    border-radius: 12px; */
-    /* display: inline;
-    padding: 10px; */
-/* } */
-
-section#user_reviews {
-    position: absolute;
-    top: 190px;
-    right: 1250px;
-    border: 2px solid rgba(37, 21, 95, 0.452);
-    border-radius: 12px;
-    background-color: white;
-    color: #559E54;
-    margin: 20px;
-    padding: 10px;
-}
-
-section#incoming {
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-    top: 190px;
-    right: 650px;
-    position: absolute;  
-    border: 2px solid rgba(37, 21, 95, 0.452);
-    border-radius: 12px;
-    background-color: white;
-    color: #559E54;
-}   
-
-section#top_food {
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-    position: absolute;
-    top: 190px;
-    right: 40px;
-    border: 2px solid rgba(37, 21, 95, 0.452);
-    border-radius: 12px;
-    background-color: white;
-    color: #559E54;
-}
-
-section#reviews {
-    text-align: center;
-}
-
-section#locations {
-    text-align: center;
-}
-
-section#show_location{
-    text-align: center;
-}
-
-section#user{
-    text-align: center;
-}
-
-section#ratings {
-    color: #559E54;
-}
-
-summary {
-    color: #559E54;
+body {
+    background-color: #236AB9;
 }
 
 details {
@@ -110,28 +40,20 @@ details {
     font-weight: bold;
 }
 
+div.comments {
+    color: #559E54;
+}
+
+div#delete_profile {
+    text-align: center;
+}
+
+div#error_explanation {
+    display: inline-block;
+}
+
 div.form-review{
     border: 2px solid #559E54;
-}
-
-ul {
-    list-style-type: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    border-radius: 10px;
-  }
-li {
-    float: left;
-    padding: 40px;
-}
-
-div#returning_users {
-    text-align: center;
-}
-
-div#new_user {
-    text-align: center;
 }
 
 div#google_login {
@@ -144,24 +66,51 @@ div#home_button {
     text-align: center;
 }
 
+div#new_user {
+    text-align: center;
+}
+
+div#returning_users {
+    text-align: center;
+}
+
+div#vacations_occasions {
+    flex-direction: row;
+}
+
+div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_vacations {
+    display: inline;
+    padding: 30px;
+}
+
 .flex-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
  
-  .flex-container > section {
+.flex-container > section {
     background-color: #f1f1f1;
-
     flex: 1;
-    
     width: 300px;
     margin: 10px;
     text-align: center;
     line-height: 50px;
     font-size: 16px;
-  }
+}
 
+form { 
+    color: white;
+    text-align: center;
+}
+
+form.edit_location {
+    text-align: center;
+}
+
+form.edit_user{
+    text-align: center;
+}
 
 form.new_location {
     color: white;
@@ -182,51 +131,6 @@ form#new_user {
     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
 }
 
-form.edit_location {
-    text-align: center;
-}
-
-form.edit_user{
-    text-align: center;
-}
-
-form { 
-    color: white;
-    text-align: center;
-}
-
-input {
-    color: slateblue;
-    margin: 10px;
-    border-radius: 20px;
-    text-align: center;
-}
-
-::placeholder{
-    color: slateblue;
-}
-
-input.delete_profile {
-    position: fixed;
-    bottom: 0;
-    left: 600px;
-    width: 200px;
-    color: red;
-    font-weight: bold;
-}
-
-input.delete_comment {
-    float: left;
-}
-
-textarea#review_additional_info {
-    color: slateblue;
-}
-
-textarea#location_review_additional_info {
-    color: slateblue;
-}
-
 h1 {
     color:  #236AB9;
 }
@@ -240,22 +144,144 @@ h4 {
     text-align: center;
 }
 
-div.comments {
-    color: #559E54;
-}
-
-div#vacations_occasions {
-    flex-direction: row;
-}
-
-div#delete_profile {
+input {
+    color: slateblue;
+    margin: 10px;
+    border-radius: 20px;
     text-align: center;
 }
 
-div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_vacations {
-    display: inline;
-    padding: 30px;
+input.delete_comment {
+    float: left;
 }
+
+input.delete_profile {
+    position: fixed;
+    bottom: 0;
+    left: 600px;
+    width: 200px;
+    color: red;
+    font-weight: bold;
+}
+
+
+li {
+    float: left;
+    padding: 40px;
+}
+
+
+section#incoming {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    top: 190px;
+    right: 650px;
+    position: absolute;  
+    border: 2px solid rgba(37, 21, 95, 0.452);
+    border-radius: 12px;
+    background-color: white;
+    color: #559E54;
+}  
+
+
+
+
+section#locations {
+    text-align: center;
+}
+
+section#ratings {
+    color: #559E54;
+}
+
+section#reviews {
+    text-align: center;
+}
+
+section#user_reviews {
+    position: absolute;
+    top: 190px;
+    right: 1250px;
+    border: 2px solid rgba(37, 21, 95, 0.452);
+    border-radius: 12px;
+    background-color: white;
+    color: #559E54;
+    margin: 20px;
+    padding: 10px;
+}
+
+section#show_location{
+    text-align: center;
+}
+
+section#top_food {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 190px;
+    right: 40px;
+    border: 2px solid rgba(37, 21, 95, 0.452);
+    border-radius: 12px;
+    background-color: white;
+    color: #559E54;
+}
+
+section#user{
+    text-align: center;
+}
+
+
+summary {
+    color: #559E54;
+}
+
+textarea#location_review_additional_info {
+    color: slateblue;
+}
+
+textarea#review_additional_info {
+    color: slateblue;
+}
+
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+  }
+
+
+
+/* div.occasions {
+    border: 2px solid rgba(37, 21, 95, 0.452);
+    border-radius: 12px; */
+    /* display: inline;
+    padding: 10px; */
+/* } */
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* li.navlink{
     margin: 30px;
