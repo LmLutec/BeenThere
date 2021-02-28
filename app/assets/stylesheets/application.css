@@ -145,7 +145,8 @@ div#home_button {
 }
 
 .flex-container {
-    display: flex; 
+    display: flex;
+  flex-direction: column;
 }
  
   .flex-container > section {
