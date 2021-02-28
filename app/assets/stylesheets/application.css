@@ -91,7 +91,6 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
  
 .flex-container > section {
     background-color: #f1f1f1;
-    flex: 1;
     width: 300px;
     margin: 10px;
     text-align: center;
