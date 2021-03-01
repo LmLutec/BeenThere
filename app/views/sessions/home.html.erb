@@ -37,26 +37,26 @@
     </section>
 
     <section id="incoming">
-    <h3>Comments section</h3>
-    <% if incoming_comments.length != 0 %>
-        <% page_user = @user %> 
-        <% incoming_comments.each do |comment| %>
-            <% if comment.user.email != page_user.email %>
-                <% if comment.created_at > 1.week.ago %>  
-                    <details open>
-                        <summary><%= by_location(comment.review.location)%></summary>
-                        <b><%="#{comment.user.first_name} #{comment.user.last_name} said"%></b> </br><%= "#{comment.content}"%></br>
-                        <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
-                        <%= link_to 'View comment', location_path(comment.review.location) %>
-                    </details></br></br>
+        <h3>Comments section</h3>
+        <% if incoming_comments.length != 0 %>
+            <% page_user = @user %> 
+            <% incoming_comments.each do |comment| %>
+                <% if comment.user.email != page_user.email %>
+                    <% if comment.created_at > 1.week.ago %>  
+                        <details open>
+                            <summary><%= by_location(comment.review.location)%></summary>
+                            <b><%="#{comment.user.first_name} #{comment.user.last_name} said"%></b> </br><%= "#{comment.content}"%></br>
+                            <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5>
+                            <%= link_to 'View comment', location_path(comment.review.location) %>
+                        </details></br></br>
+                    <% end %>
                 <% end %>
             <% end %>
+        <% else %>
+            <h3><i>No comments yet! Check back soon!</i></h3>
         <% end %>
-    <% else %>
-        <h3><i>No comments yet! Check back soon!</i></h3>
-    <% end %>
-
     </section>
+
     <section id="top_food">
     <h3>Vacation spots with top rated food!</h3>
     <% if @reviews %>
