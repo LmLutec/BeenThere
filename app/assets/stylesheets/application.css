@@ -83,10 +83,10 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     padding: 30px;
 }
 
-.flex-container {
+/* .flex-container {
     display: flex;
-    /* flex: 1; */
-}
+    flex: 1;
+} */
  
 .flex-container > section {
     background-color: #f1f1f1;
@@ -181,7 +181,7 @@ section#incoming {
     border-radius: 12px;
     background-color: white;
     color: #559E54;
-    flex: 1;
+    /* flex: 1; */
 }  
 
 
@@ -209,7 +209,7 @@ section#user_reviews {
     color: #559E54;
     margin: 20px;
     padding: 10px;
-    flex: 2;
+    /* flex: 2; */
 }
 
 section#show_location{
@@ -227,7 +227,7 @@ section#top_food {
     border-radius: 12px;
     background-color: white;
     color: #559E54;
-    flex: 1;
+    /* flex: 1; */
 }
 
 section#user{
