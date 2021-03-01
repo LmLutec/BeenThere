@@ -83,11 +83,11 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     padding: 30px;
 }
 
-/* .flex-container {
+.flex-container {
     display: flex;
     align-items: center;
     justify-content: center;
-} */
+}
  
 .flex-container > section {
     background-color: #f1f1f1;
