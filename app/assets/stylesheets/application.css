@@ -85,7 +85,7 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
 
 .flex-container {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
 }
  
 .flex-container > section {
@@ -96,7 +96,7 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     line-height: 50px;
     font-size: 16px;
     /* align-items: center; */
-    /* justify-content: center; */
+    justify-content: flex-start;
 }
 
 form { 
