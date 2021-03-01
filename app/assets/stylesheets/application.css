@@ -85,18 +85,18 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
 
 .flex-container {
     display: flex;
-    flex-direction: row;
+    flex: 1;
 }
  
-/* .flex-container > section {
+.flex-container > section {
     background-color: #f1f1f1;
     width: 300px;
     margin: 10px;
     text-align: center;
     line-height: 50px;
     font-size: 16px;
-    /* align-items: center; */
-    /* justify-content: flex-start; */
+    /* flex: 1; */
+}
 
 form { 
     color: white;
@@ -174,13 +174,14 @@ section#incoming {
     text-align: center;
     margin: 20px;
     padding: 10px;
-    top: 190px;
+    /* top: 190px;
     right: 650px;
-    position: absolute;  
+    position: absolute;   */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
     background-color: white;
     color: #559E54;
+    flex: 1;
 }  
 
 
@@ -199,15 +200,16 @@ section#reviews {
 }
 
 section#user_reviews {
-    position: absolute;
+    /* position: absolute;
     top: 190px;
-    right: 1250px;
+    right: 1250px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
-    background-color: white;
+    background-color: red;
     color: #559E54;
     margin: 20px;
     padding: 10px;
+    flex: 2;
 }
 
 section#show_location{
@@ -218,13 +220,14 @@ section#top_food {
     text-align: center;
     margin: 20px;
     padding: 10px;
-    position: absolute;
+    /* position: absolute;
     top: 190px;
-    right: 40px;
+    right: 40px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
     background-color: white;
     color: #559E54;
+    flex: 1;
 }
 
 section#user{
