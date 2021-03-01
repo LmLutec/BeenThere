@@ -93,7 +93,7 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     /* width: 300px; */
     margin: 10px;
     text-align: center;
-    line-height: 50px;
+    /* line-height: 50px; */
     font-size: 16px;
     flex: 1;
 }
