@@ -169,6 +169,10 @@ li {
     padding: 40px;
 }
 
+.login-btn {
+    border: solid;
+}
+
 
 section#incoming {
     text-align: center;
