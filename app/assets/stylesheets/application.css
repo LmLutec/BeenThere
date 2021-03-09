@@ -27,6 +27,10 @@ a {
     display: inline;
 }
 
+a.navlink:hover {
+    color: #FC600A;
+}
+
 
 body {
     background-color: #110934;;
@@ -97,7 +101,7 @@ div.root-pg-container{
 .flex-container { 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 } 
  
 .flex-container > section {
@@ -198,6 +202,10 @@ li {
     float: left;
     padding: 40px;
 }
+
+/* li.navlink:hover {
+    color: #FC600A;
+} */
 
 .login-btn {
     border: solid;
