@@ -1,18 +1,18 @@
-<h4>Tell us about your Location!</h4>
-
-	<% if @location.errors.any? %>
-	<div id="error_explanation">
-	<h2>
-	<%= pluralize(@location.errors.count, "error") %>
-	prohibited this review from being saved:
-	</h2>
-	 
-	<ul>
-  <% @location.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
-	<% end %>
-	</ul>
-	</div>
+<div class='location-review-container'>
+  <h3>Tell us about your Location!</h3>
+  
+    <% if @location.errors.any? %>
+	    <div id="error_explanation">
+        <h2>
+          <%= pluralize(@location.errors.count, "error") %>
+            prohibited this review from being saved:
+        </h2>
+        <ul>
+          <% @location.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
   <% end %>
   
 
@@ -43,7 +43,7 @@
     </datalist></br>
 
 
-    <h4>Location reviews</h4>
+    <h3>Location reviews</h3>
     <div class="review-form">
     <%= f.fields_for :review do |reviews_attributes| %>
         <%= reviews_attributes.hidden_field :user_id, :value => @user.id %>
@@ -98,8 +98,10 @@
         <%= reviews_attributes.text_area :additional_info %> </br>
         
     <% end %>
-    <%= f.submit "Submit review" %>
+    <%= f.submit "Submit review", class: 'submit-review' %>
   </div>
   <% end %></br></br>
-<%= link_to 'Return home', home_path %>
+  <%= link_to 'Return home', home_path, class: 'home-link' %>
+  </div>
+
 

@@ -27,6 +27,11 @@ a {
     display: inline;
 }
 
+a.home-link:hover {
+    color: #FC600A;
+    font-size: 18px;
+}
+
 body {
     background-color: #110934;;
 } 
@@ -48,12 +53,19 @@ div#error_explanation {
     display: inline-block;
 }
 
-div.form-review{
+/* div.review-form{
     border: 2px solid #559E54;
-}
+} */
 
 div#home_button {
     text-align: center;
+}
+
+div.location-review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 div.login-container {
@@ -108,10 +120,10 @@ div.root-pg-container{
     font-size: 16px;
 }
 
-form { 
+/* form { 
     color: white;
     text-align: center;
-}
+} */
 
 form.edit_location {
     text-align: center;
@@ -121,9 +133,13 @@ form.edit_user{
     text-align: center;
 }
 
-form.new_location {
-    color: white;
+form#new_location {
+    color: #FC600A;
+    background-color: #F0F7D4;
     text-align: center;
+    width: max-content;
+    padding: 10px;
+    font-size: 18px;
 }
 
 form#new_user {
@@ -198,6 +214,16 @@ input[type=submit]:hover{
     background-color: #B2D732;
 }
 
+input.submit-review[type=submit]{
+    color: #FC600A;
+    background-color: #559E54;
+    font-size: 18px;
+}
+
+input.submit-review[type=submit]:hover{
+    background-color: #110934;
+}
+
 li {
     float: left;
     padding: 40px;
@@ -213,7 +239,10 @@ li.navlink a:hover {
     font-size: 20px;
 }
 
-
+/* .location-review-container {
+    display: flex;
+    flex-direction: column;
+} */
 
 .login-btn {
     border: solid;
