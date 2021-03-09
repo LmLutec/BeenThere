@@ -1,4 +1,5 @@
-   <header><h3>Welcome back, <%= @user.first_name.capitalize %></h3></header>
+<div class='home-container'>
+   <h3>Welcome back, <%= @user.first_name.capitalize %></h3>
    <ul class="nav">
 
     <li class="navlink"><%= link_to 'Add vacation', new_location_path %></br> </li>
@@ -11,7 +12,7 @@
 
     <li><%= link_to 'Edit profile', edit_user_path(@user) %></br></br> </li>
     <li><%= link_to 'Logout', logout_path, method: 'post' %></br></li><br/><br/>
-    
+</div>    
 
 
    </ul>

@@ -80,6 +80,13 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     padding: 30px;
 }
 
+div.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 div.root-pg-container{
     display: flex;
     justify-content: center;
@@ -170,9 +177,9 @@ input.delete_comment {
 }
 
 input.delete_profile {
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    left: 600px;
+    left: 600px; */
     width: 200px;
     color: red;
     font-weight: bold;
@@ -214,9 +221,9 @@ section#incoming {
     text-align: center;
     margin: 20px;
     padding: 10px;
-    top: 190px;
+    /* top: 190px;
     right: 650px;
-    position: absolute;  
+    position: absolute;   */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
     background-color: white;
@@ -239,9 +246,9 @@ section#reviews {
 }
 
 section#user_reviews {
-    position: absolute;
+    /* position: absolute;
     top: 190px;
-    right: 1250px;
+    right: 1250px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
     background-color: white;
@@ -258,9 +265,9 @@ section#top_food {
     text-align: center;
     margin: 20px;
     padding: 10px;
-    position: absolute;
+    /* position: absolute;
     top: 190px;
-    right: 40px;
+    right: 40px; */
     border: 2px solid rgba(37, 21, 95, 0.452);
     border-radius: 12px;
     background-color: white;
