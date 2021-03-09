@@ -94,20 +94,20 @@ div.root-pg-container{
     flex-direction: column;
 }
 
-/* .flex-container {
-    display: flex; */
-    /* flex-direction: row; */
-/* } */
+.flex-container { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+} 
  
-/* .flex-container > section {
+.flex-container > section {
     background-color: #f1f1f1;
     width: 300px;
     margin: 10px;
     text-align: center;
     line-height: 50px;
     font-size: 16px;
-    /* align-items: center; */
-    /* justify-content: flex-start; */
+}
 
 form { 
     color: white;

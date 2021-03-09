@@ -1,5 +1,5 @@
 <div class='home-container'>
-   <h3>Welcome back, <%= @user.first_name.capitalize %></h3>
+<h3>Welcome back, <%= @user.first_name.capitalize %></h3>
    <ul class="nav">
 
     <li class="navlink"><%= link_to 'Add vacation', new_location_path %></br> </li>
@@ -12,10 +12,11 @@
 
     <li><%= link_to 'Edit profile', edit_user_path(@user) %></br></br> </li>
     <li><%= link_to 'Logout', logout_path, method: 'post' %></br></li><br/><br/>
-</div>    
+    
 
 
    </ul>
+</div>
 </br>
 
 <div class="flex-container">
@@ -70,6 +71,6 @@
     <% end %>
     </section>
 </div> 
-    <div id="delete_profile">   
-        <%= button_to 'Delete Profile', user_path(@user), :method => "delete", class: 'delete_profile' %>
+<div id="delete_profile">   
+    <%= button_to 'Delete Profile', user_path(@user), :method => "delete", class: 'delete_profile' %>
 </div>
