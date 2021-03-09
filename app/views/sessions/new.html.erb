@@ -1,16 +1,19 @@
+<div class='login-container'>
 <%= form_for @user, url: login_path do |f| %>
     <h1>Log In</h1>
     <%= f.text_field :email, placeholder: "Email" %>
     <%= f.password_field :password, placeholder: "Password" %>
-    <%= f.submit "Log In" %>
+    <%= f.submit "Sign In" %>
 <% end %>
 </br>
 
 <div id= "google_login">
-    <%= link_to('Log in with Google!', '/auth/google_oauth2') %></br></br>
+    <%= link_to('Log in with Google!', '/auth/google_oauth2', class: 'google_login') %></br></br>
 </div>
+
 
 <div id="new_user">
     <h3>New User?</h3> 
-    <%= link_to 'Create new account', root_path %>
+    <%= link_to 'Create new account', root_path, class: 'new-acct-btn' %>
+</div>
 </div>

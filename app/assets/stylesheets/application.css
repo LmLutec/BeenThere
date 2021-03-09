@@ -27,9 +27,6 @@ a {
     display: inline;
 }
 
-a:hover {
-    background-color: #B2D732;
-}
 
 body {
     background-color: #110934;;
@@ -56,14 +53,14 @@ div.form-review{
     border: 2px solid #559E54;
 }
 
-div#google_login {
-    position: absolute;
-    right: 650px;
-    top: 320px;
-}
-
 div#home_button {
     text-align: center;
+}
+
+div.login-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 div#new_user {
@@ -140,6 +137,14 @@ form.new_user input {
     /* border-color: #B2D732; */
 }
 
+.google_login {
+    font-size: 20px;
+}
+
+.google_login:hover {
+    color:#FC600A;
+}
+
 h1 {
     color:#FC600A;
 }
@@ -197,6 +202,13 @@ li {
     color: #FC600A;
 }
 
+.login-btn:hover {
+    background-color: #B2D732;
+}
+
+.new-acct-btn:hover {
+    color: #FC600A;
+}
 
 section#incoming {
     text-align: center;
