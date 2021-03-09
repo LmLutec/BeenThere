@@ -83,10 +83,17 @@ div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_va
     padding: 30px;
 }
 
-.flex-container {
+div.root-pg-container{
     display: flex;
-    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+/* .flex-container {
+    display: flex; */
+    /* flex-direction: row; */
+/* } */
  
 /* .flex-container > section {
     background-color: #f1f1f1;
@@ -120,9 +127,9 @@ form.new_user {
     text-align: center;
     padding: 20px;
     width: 50%;
-    position: absolute;
+    /* position: absolute;
     left: 350px;
-    top: 150px;
+    top: 150px; */
     background-color: #F0F7D4;
 }
 
@@ -135,7 +142,7 @@ h1 {
 }
 
 h3 {
-    color: #559E54;
+    color: #B2D732;
 }
 
 h4 {
@@ -179,12 +186,6 @@ li {
     color: #FC600A;
 }
 
-.main-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
 section#incoming {
     text-align: center;
