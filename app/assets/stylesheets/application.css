@@ -18,7 +18,7 @@
     /* background-color:#99d6ff; */
 /* } */
 ::placeholder{
-    color: slateblue;
+    color: #FC600A;
 }
 
 a {
@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-    background-color: #F0F7D4;
+    background-color: #B2D732;
 }
 
 body {
@@ -123,18 +123,21 @@ form.new_location {
     text-align: center;
 }
 
+form#new_user {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
+}
+
 form.new_user {
     text-align: center;
     padding: 20px;
     width: 50%;
-    /* position: absolute;
-    left: 350px;
-    top: 150px; */
     background-color: #F0F7D4;
 }
 
-form#new_user {
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.19);
+form.new_user input {
+    border-radius: 8px;
+    border: 2px solid #B2D732;
+    /* border-color: #B2D732; */
 }
 
 h1 {
@@ -151,9 +154,9 @@ h4 {
 }
 
 input {
-    color: slateblue;
+    color: #FC600A;
     margin: 10px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     text-align: center;
 }
 
@@ -170,6 +173,14 @@ input.delete_profile {
     font-weight: bold;
 }
 
+input[type=submit]{
+    background-color: #F0F7D4;
+    font-size: 16px;
+}
+
+input[type=submit]:hover{
+    background-color: #B2D732;
+}
 
 li {
     float: left;
