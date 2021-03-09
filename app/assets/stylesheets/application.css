@@ -203,9 +203,17 @@ li {
     padding: 40px;
 }
 
-/* li.navlink:hover {
+li.navlink a {
+    font-size: 18px;
+}
+
+
+li.navlink a:hover {
     color: #FC600A;
-} */
+    font-size: 20px;
+}
+
+
 
 .login-btn {
     border: solid;
