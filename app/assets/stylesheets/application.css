@@ -27,14 +27,9 @@ a {
     display: inline;
 }
 
-a.navlink:hover {
-    color: #FC600A;
-}
-
-
 body {
     background-color: #110934;;
-}
+} 
 
 details {
     color: #559E54;
@@ -181,12 +176,17 @@ input.delete_comment {
 }
 
 input.delete_profile {
-    /* position: fixed;
+    position: fixed;
     bottom: 0;
-    left: 600px; */
+    left: 600px;
     width: 200px;
     color: red;
     font-weight: bold;
+}
+
+input.delete_profile[type=submit]{ 
+    background-color: #110934;
+    border: 2px solid red;
 }
 
 input[type=submit]{
