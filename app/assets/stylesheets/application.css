@@ -131,7 +131,7 @@ form#new_user {
 }
 
 h1 {
-    color:  #236AB9;
+    color:#FC600A;
 }
 
 h3 {
@@ -167,6 +167,16 @@ input.delete_profile {
 li {
     float: left;
     padding: 40px;
+}
+
+.login-btn {
+    border: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    background-color: #110934;
+    font-size: 22px;
+    margin: 20px;
+    color: #FC600A;
 }
 
 .main-page-container {
