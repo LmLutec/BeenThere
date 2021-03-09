@@ -37,7 +37,7 @@ body {
 } 
 
 details {
-    color: #559E54;
+    color: #FC600A;
     font-weight: bold;
 }
 
@@ -83,13 +83,19 @@ div#returning_users {
 }
 
 div#vacations_occasions {
-    flex-direction: row;
+    display: flex;
+    
 }
 
-div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_vacations {
-    display: inline;
-    padding: 30px;
+div.occasions {
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center; */
 }
+
+/* div#business_vacations, div#family_vacations, div#solo_vacations, div#couples_vacations {
+  
+} */
 
 div.home-container {
     display: flex;
@@ -177,7 +183,7 @@ h3 {
 
 h4 {
     color: white;
-    text-align: center;
+    /* text-align: center; */
 }
 
 input {
@@ -287,7 +293,11 @@ section#ratings {
 }
 
 section#reviews {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 section#user_reviews {
@@ -325,7 +335,7 @@ section#user{
 
 
 summary {
-    color: #559E54;
+    color: #FC600A;
 }
 
 textarea#location_review_additional_info {
