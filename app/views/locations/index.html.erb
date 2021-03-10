@@ -3,13 +3,13 @@
 
 <% if @locations.length != 0 %>
     <% @locations.each do |location| %>
-            <%= link_to by_location(location), location_path(location) %> - Review count: <%= location.reviews.count %></br>      
+            <%= link_to by_location(location), location_path(location) %> <b> - Review count: <%= location.reviews.count %></b></br>      
         <% end %></br></br>
 <% else %>
     <h4><i>No reviews yet!</i></h4>
 <% end %>
 
-<%= link_to 'Home', home_path %>
+<%= link_to 'Home', home_path, class: 'home-link' %>
 
 </section>
 
