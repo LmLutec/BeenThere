@@ -89,6 +89,7 @@ div.login-container {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 200px;
 }
 
 div.new-comment-container {
@@ -108,13 +109,14 @@ div#returning_users {
     text-align: center;
 }
 
-div#vacations_occasions {
+div#vacation_occasions {
     display: flex;
-    
+    /* background-color: #F0F7D4; */
 }
 
 div.occasions {
     flex-direction: row;
+    padding: 30px;
     /* justify-content: center;
     align-items: center; */
 }
@@ -141,11 +143,11 @@ div.root-pg-container{
     border: 2px solid #FC600A;
 }
 
-.edit-review-btn, .submit-comment-btn {
+.edit-review-btn, .edit-user-btn, .submit-comment-btn {
     border: 2px solid #FC600A;
 }
 
-.edit-location-container {
+.edit-location-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,7 +156,17 @@ div.root-pg-container{
     text-align: center;
 }
 
+
 .edit-review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FC600A;
+    text-align: center;
+}
+
+.edit-user-container {
     display: flex;
     justify-content: center;
     align-items: center;

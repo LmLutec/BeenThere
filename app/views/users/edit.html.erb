@@ -1,3 +1,5 @@
+<div class='edit-user-container'>
+    <h1>Edit your profile</h1>
 <% if @user.errors.any? %>
 <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %>
@@ -19,10 +21,11 @@
     Age: <%= f.text_field :age %></br>
     Email: <%= f.text_field :email %></br>
     Password: <%= f.text_field :password %></br>
-    <%= f.submit "Edit user account" %></br>
+    <%= f.submit "Edit user account", class: 'edit-user-btn' %></br>
 
 <% end %></br></br>
 
 <div id="home_button">
-    <%= link_to 'Home', home_path %>
+    <%= link_to 'Home', home_path, class: 'home-link' %>
+</div>
 </div>
