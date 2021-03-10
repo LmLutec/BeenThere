@@ -63,7 +63,7 @@
     <% if @reviews %>
         <% highest_food_rating.each do |f| %>
             <% l = find_by_country(f[0]) %>
-        <%=link_to "#{f[0]}, rating: #{f[1]}", location_path(l) %></br>
+        <%=link_to "#{f[0]}, rating: #{f[1]}", location_path(l), class: 'location-link' %></br>
         <% end %>
     <% else %>
         <h4><i>Sorry! No reviews just yet!</i></h4>    

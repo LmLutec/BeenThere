@@ -69,9 +69,11 @@
       8. Additional comments: </br>
       <%= reviews_attributes.text_area :additional_info %> </br>
 
-      <%= reviews_attributes.submit "Edit review" %>
+      <%= reviews_attributes.submit "Edit review", class: 'edit-review-btn' %>
 
   <% end %></br></br>
-</div>
 
-<%= link_to 'Return home', home_path %>
+
+<%= link_to 'Return home', home_path, class: 'home-link' %>
+
+</div>

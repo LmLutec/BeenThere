@@ -27,14 +27,31 @@ a {
     display: inline;
 }
 
+a.home-link{
+    font-size: 18px;
+}
+
 a.home-link:hover {
     color: #FC600A;
-    font-size: 18px;
+    font-size: 22px;
+}
+
+a.location-link:hover{
+    color: #110934;
+}
+
+b {
+    color: #559E54;
+    padding: 10px;
 }
 
 body {
     background-color: #110934;;
 } 
+
+.delete_review {
+    border: 2px solid #FC600A;
+}
 
 details {
     color: #FC600A;
@@ -115,12 +132,17 @@ div.root-pg-container{
     border: 2px solid #FC600A;
 }
 
+.edit-review-btn {
+    border: 2px solid #FC600A;
+}
+
 .edit-location-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: #FC600A;
+    text-align: center;
 }
 
 .edit-review-container {

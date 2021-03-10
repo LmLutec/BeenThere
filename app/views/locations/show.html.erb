@@ -1,10 +1,10 @@
 <section id="show_location">
 <h1><%= by_location(@location) %></h1> </br></br>
 <section id= "ratings">
-# <b>Satisfaction rating:</b> <%= avg_satisfied(@location) %>
-# <b>Chance of revisit:</b> <%= avg_revisit(@location) %>
-<b>Food rating: </b><%= food_rating(@location) %>
-<b>Reviews available:</b> <%= @location.reviews.count%></br>
+<b>Satisfaction rating: <%= avg_satisfied(@location) %></b>
+<b>Chance of revisit: <%= avg_revisit(@location) %></b>
+<b>Food rating: <%= food_rating(@location) %></b>
+<b>Reviews available: <%= @location.reviews.count%></b>
 </section>
 
 
@@ -22,10 +22,10 @@
                     <%= "Events: #{review.events}" %></br>
                     <%= "Cost level: around #{round_cost_level(review)}" %> </br>
                     <%= "Comments: #{review.additional_info}" %></br> </br>
-                    <b>Number of comments:</b> <%= comment_count(review) %></br></br>
+                    <b>Number of comments: <%= comment_count(review) %></b></br></br>
                    
                     <% review.comments.each do |comment| %>
-                       <b><%= comment.user.first_name %> <%= comment.user.last_name %></b> says: </br>
+                       <b><%= comment.user.first_name %> <%= comment.user.last_name %></b>says: </br>
                         <%= comment.content %>
                     <h5><%= comment.created_at.strftime("at %I:%M %P on %b %d, %Y") %></h5></br></br>
                         <% end %></br>
