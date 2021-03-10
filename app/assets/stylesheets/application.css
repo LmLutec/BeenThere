@@ -111,12 +111,25 @@ div.root-pg-container{
     flex-direction: column;
 }
 
+.edit-login-btn {
+    border: 2px solid #FC600A;
+}
+
 .edit-location-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: #FC600A;
+}
+
+.edit-review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FC600A;
+    text-align: center;
 }
 
 .flex-container { 
@@ -139,9 +152,9 @@ div.root-pg-container{
     text-align: center;
 } */
 
-form.edit_location {
+/* form.edit_location {
     text-align: center;
-}
+} */
 
 form.edit_user{
     text-align: center;

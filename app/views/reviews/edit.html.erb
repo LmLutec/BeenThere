@@ -1,5 +1,5 @@
-<h4>Edit your review!</h4>
-
+<div class='edit-review-container'>
+<h1>Edit your review!</h1>
 
   <% if @review.errors.any? %>
 	<div id="error_explanation">
@@ -15,7 +15,6 @@
 	</ul>
 	</div>
   <% end %>
-
 
   <%= form_for :review do |reviews_attributes| %>
       <%= reviews_attributes.hidden_field :location_id, :value => @location.id %>
@@ -73,6 +72,6 @@
       <%= reviews_attributes.submit "Edit review" %>
 
   <% end %></br></br>
-
+</div>
 
 <%= link_to 'Return home', home_path %>
