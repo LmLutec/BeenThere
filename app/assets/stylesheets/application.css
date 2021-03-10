@@ -97,6 +97,7 @@ div.new-comment-container {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    padding: 200px;
 }
 
 div#new_user {
