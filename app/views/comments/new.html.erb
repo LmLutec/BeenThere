@@ -1,3 +1,4 @@
+<div class='new-comment-container'>
 <% if @comment.errors.any? %>
 	<div id="error_explanation">
 	<h2>
@@ -17,9 +18,9 @@
 <%= form_for @comment do |f| %>
     <%= f.hidden_field :user_id %>
     <%= f.hidden_field :review_id %>
-  <h3>Comment: </h3><%= f.text_area :content %>
-    <%= f.submit "Post comment" %></br></br>
-    <%= link_to "Go home", home_path %>
+  <h3>Comment: </h3><%= f.text_area :content %></br>
+    <%= f.submit "Post comment", class: 'submit-comment-btn'%></br></br>
+    <%= link_to "Go home", home_path, class: 'home-link' %>
 <% end %>
 
-
+</div>

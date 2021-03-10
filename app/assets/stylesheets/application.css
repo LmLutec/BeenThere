@@ -91,6 +91,14 @@ div.login-container {
     flex-direction: column;
 }
 
+div.new-comment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
 div#new_user {
     text-align: center;
 }
@@ -132,7 +140,7 @@ div.root-pg-container{
     border: 2px solid #FC600A;
 }
 
-.edit-review-btn {
+.edit-review-btn, .submit-comment-btn {
     border: 2px solid #FC600A;
 }
 
