@@ -21,19 +21,19 @@
 
 <div class="flex-container">
     <section id="user_reviews">
-    <h3><%= @user.first_name.capitalize %>'s reviews</h3>
-    <% if @user.reviews.length != 0 %>
-        <% @user.reviews.each do |review| %>
-            <% location = review.location %> 
-        <h5>My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </h5></br>
+        <h3><%= @user.first_name.capitalize %>'s reviews</h3>
+        <% if @user.reviews.length != 0 %>
+            <% @user.reviews.each do |review| %>
+                <% location = review.location %> 
+            <h5>My trip to <%= "#{by_location(review.location)} on #{review.created_at.strftime("%b %d, %Y")}" %> </h5></br>
                 <%= link_to 'Edit location', edit_location_path(location) %></br>
                 <%= link_to "Edit my review", edit_review_path(review) %></br></br>
-        
+            
                 <%= button_to "Delete my trip", review, :method => "delete", class: 'delete_review'%>
+            <% end %>
+        <% else %>
+                <h4><i>Add a review!</i></h4>
         <% end %>
-    <% else %>
-            <h4><i>Add a review!</i></h4>
-    <% end %>
 
     </br>
     </section>
@@ -41,9 +41,8 @@
     <section id="incoming">
     <h3>Comments</h3>
     <% if incoming_comments.length != 0 %>
-        <% page_user = @user %> 
         <% incoming_comments.each do |comment| %>
-            <% if comment.user.email != page_user.email %>
+            <% if comment.user.email != @user.email %>
                 <% if comment.created_at > 1.week.ago %>  
                     <details open>
                         <summary><%= by_location(comment.review.location)%></summary>

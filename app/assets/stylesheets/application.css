@@ -111,6 +111,14 @@ div.root-pg-container{
     flex-direction: column;
 }
 
+.edit-location-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FC600A;
+}
+
 .flex-container { 
     display: flex;
     flex-direction: row;

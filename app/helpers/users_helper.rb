@@ -24,7 +24,7 @@ module UsersHelper
 
       comments = User.find_by(id: current_user).comments_received
       comments.each do |comment|
-         @user = comment.user.first_name
+         @user = comment.user
          @comment = comment 
          
          @user_received << @comment 
